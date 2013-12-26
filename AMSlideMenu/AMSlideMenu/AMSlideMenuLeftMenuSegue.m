@@ -7,12 +7,18 @@
 //
 
 #import "AMSlideMenuLeftMenuSegue.h"
+
 #import "AMSlideMenuMainViewController.h"
 #import "AMSlideMenuLeftTableViewController.h"
 
 @implementation AMSlideMenuLeftMenuSegue
 
--(void) perform{
+/*----------------------------------------------------*/
+#pragma mark - Actions -
+/*----------------------------------------------------*/
+
+- (void)perform
+{
     AMSlideMenuMainViewController* mainVC = self.sourceViewController;
     AMSlideMenuLeftTableViewController* leftMenu = self.destinationViewController;
     

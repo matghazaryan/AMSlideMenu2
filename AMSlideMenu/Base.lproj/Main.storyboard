@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="v6F-O2-yJh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="v6F-O2-yJh">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--MainVC-->
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="-1622" y="1673"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="lqe-dJ-ozm">
             <objects>
-                <navigationController definesPresentationContext="YES" id="ayi-pF-slg" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="ayi-pF-slg" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lzf-iv-0yg">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -274,10 +274,10 @@
             </objects>
             <point key="canvasLocation" x="402" y="2112"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="Jy3-YI-Mnj">
             <objects>
-                <navigationController definesPresentationContext="YES" id="OUC-EW-lWu" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="OUC-EW-lWu" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zzN-S1-em3">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -289,10 +289,10 @@
             </objects>
             <point key="canvasLocation" x="-642" y="2112"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="6wk-2e-7i2">
             <objects>
-                <navigationController definesPresentationContext="YES" id="YhU-TJ-JFv" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="YhU-TJ-JFv" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6D-0b-8Qd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -304,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="-642" y="3871"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="18j-5j-TM4">
             <objects>
-                <navigationController definesPresentationContext="YES" id="80z-L9-JYV" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="80z-L9-JYV" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yYM-sf-lcI">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -614,10 +614,10 @@
             </objects>
             <point key="canvasLocation" x="-1566" y="6336"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="ibn-tK-eIG">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Dhd-YC-aYa" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="Dhd-YC-aYa" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3EG-nM-JC9">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -736,10 +736,10 @@
             </objects>
             <point key="canvasLocation" x="402" y="5975"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="hrp-qa-1V3">
             <objects>
-                <navigationController definesPresentationContext="YES" id="bQl-66-ANk" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="bQl-66-ANk" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="295-US-aBa">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -751,10 +751,10 @@
             </objects>
             <point key="canvasLocation" x="-642" y="5975"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="Bvb-Ig-PoT">
             <objects>
-                <navigationController definesPresentationContext="YES" id="V8V-i4-6tc" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="V8V-i4-6tc" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J7j-OM-G5a">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -766,10 +766,10 @@
             </objects>
             <point key="canvasLocation" x="-642" y="8683"/>
         </scene>
-        <!--Test Nav View Controller-->
+        <!--MainNVC-->
         <scene sceneID="2tE-6q-aOn">
             <objects>
-                <navigationController definesPresentationContext="YES" id="xew-kN-eoz" customClass="testNavViewController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="xew-kN-eoz" customClass="MainNVC" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bml-5M-aFi">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

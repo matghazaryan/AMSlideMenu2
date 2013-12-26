@@ -10,15 +10,42 @@
 
 @interface UIViewController (AMSlideMenu)
 
+/** 
+ * Adds left menu top button
+ */
 - (void)addLeftMenuButton;
-- (void)addRightMenuButton;
 
 /**
- * User this methods in  viewWillAppear:
+ * Adds right menu top button
+ */
+- (void)addRightMenuButton;
+
+//
+// MUST BE USED in viewWillAppear:
+//
+
+/**
+ * Disables Left menu open functional
+ * by Pan gesture recognizer
  */
 - (void)disableSlidePanGestureForLeftMenu;
+
+/**
+ * Disables Right menu open functional
+ * by Pan gesture recognizer
+ */
 - (void)disableSlidePanGestureForRightMenu;
+
+/**
+ * Enables Left menu open functional
+ * by Pan gesture recognizer
+ */
 - (void)enableSlidePanGestureForLeftMenu;
+
+/**
+ * Disables Right menu open functional
+ * by Pan gesture recognizer
+ */
 - (void)enableSlidePanGestureForRightMenu;
 
 @end

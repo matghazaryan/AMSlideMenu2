@@ -16,12 +16,13 @@
 
 @implementation PushedVC
 
+/*----------------------------------------------------*/
+#pragma mark - Lifecycle -
+/*----------------------------------------------------*/
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    
     // Disabling pan gesture for left menu
     [self disableSlidePanGestureForLeftMenu];
     
@@ -32,6 +33,10 @@
         [self addRightMenuButton];
     }
 }
+
+/*----------------------------------------------------*/
+#pragma mark - IBActions -
+/*----------------------------------------------------*/
 
 - (IBAction)exitToRoot:(id)sender
 {

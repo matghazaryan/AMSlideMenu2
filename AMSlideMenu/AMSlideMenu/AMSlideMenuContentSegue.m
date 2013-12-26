@@ -7,11 +7,16 @@
 //
 
 #import "AMSlideMenuContentSegue.h"
+
 #import "AMSlideMenuMainViewController.h"
 
 @implementation AMSlideMenuContentSegue
 
-- (void) perform
+/*----------------------------------------------------*/
+#pragma mark - Actions -
+/*----------------------------------------------------*/
+
+- (void)perform
 {
     UITableViewController *sourceVC = [self sourceViewController];
     UINavigationController *destinationNVC = [self destinationViewController];
