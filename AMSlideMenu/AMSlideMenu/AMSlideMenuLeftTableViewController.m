@@ -26,7 +26,7 @@
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && ![UIApplication sharedApplication].isStatusBarHidden)
     {
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+//        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     }
 }
 
