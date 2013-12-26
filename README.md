@@ -5,7 +5,7 @@ Sliding Menu for iOS by <b> arturdev </b>.
 
 This is a simple library to create sliding menus that can be used in storyboards and support static cells.
 
-Whith this library you can create 3 types of sliding menus: <br>
+With this library you can create 3 types of sliding menus: <br>
 1. Slide menu with <b>right</b> menu only. <br>
 2. Slide menu with <b>left</b> menu only. <br>
 3. Slide menu with <b>both left and right</b> menus. <br>
