@@ -75,7 +75,23 @@ You cas use this methods in you MainVC.m if you want to open or close left or ri
 - (void)closeRightMenu;
 - (void)closeRightMenuAnimated:(BOOL)animated;
 </pre>
+<br>
+If you want do <b>add left/right menu button</b>, or <b>enable/disable pan gesture</b> in you pushed view controller, then just import "UIViewController+AMSlideMenu.h" and call this methods from your pushed VC instance:
+<pre>
+- (void)addLeftMenuButton;
+- (void)addRightMenuButton;
+- (void)disableSlidePanGestureForLeftMenu;
+- (void)disableSlidePanGestureForRightMenu;
+- (void)enableSlidePanGestureForLeftMenu;
+- (void)enableSlidePanGestureForRightMenu;
+</pre>
+e.g.
+<pre>
+[self addLeftMenuButton];
+</pre>
+Where self is your pushed VC.
 
+<br>
 If you want to get menu's open/close callbacks, then set MainVC's delegate property,
 and implement protocol named 'AMSlideMenuProtocols'.
 <pre>
