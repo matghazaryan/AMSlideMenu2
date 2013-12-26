@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3E9BC24C186C15B6002B1FE3 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC24A186C15B6002B1FE3 /* icon-menu.png */; };
 		3E9BC24D186C15B6002B1FE3 /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */; };
-		3E9BC253186C1CC8002B1FE3 /* MainNVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9BC252186C1CC8002B1FE3 /* MainNVC.m */; };
 		3E9BC255186C2992002B1FE3 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */; };
 		3E9C29921869CAD700E7F5E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29911869CAD700E7F5E5 /* Foundation.framework */; };
 		3E9C29941869CAD700E7F5E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29931869CAD700E7F5E5 /* CoreGraphics.framework */; };
@@ -52,8 +51,6 @@
 /* Begin PBXFileReference section */
 		3E9BC24A186C15B6002B1FE3 /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
 		3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu@2x.png"; sourceTree = "<group>"; };
-		3E9BC251186C1CC8002B1FE3 /* MainNVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNVC.h; sourceTree = "<group>"; };
-		3E9BC252186C1CC8002B1FE3 /* MainNVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNVC.m; sourceTree = "<group>"; };
 		3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
 		3E9C298E1869CAD700E7F5E5 /* AMSlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMSlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9C29911869CAD700E7F5E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -234,8 +231,6 @@
 				3E9C29E51869CE8200E7F5E5 /* RightMenuVC.m */,
 				3EE3E698186B1F6100427ECF /* PushedVC.h */,
 				3EE3E699186B1F6100427ECF /* PushedVC.m */,
-				3E9BC251186C1CC8002B1FE3 /* MainNVC.h */,
-				3E9BC252186C1CC8002B1FE3 /* MainNVC.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -354,7 +349,6 @@
 				3E9C29D21869CD5A00E7F5E5 /* AMSlideMenuMainViewController.m in Sources */,
 				3E9C29EA1869D9A800E7F5E5 /* UIViewController+AMSlideMenu.m in Sources */,
 				3E9C29E61869CE8200E7F5E5 /* RightMenuVC.m in Sources */,
-				3E9BC253186C1CC8002B1FE3 /* MainNVC.m in Sources */,
 				3E9C299E1869CAD700E7F5E5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

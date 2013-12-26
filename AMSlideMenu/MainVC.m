@@ -78,7 +78,7 @@
 
 - (void) configureSlideLayer:(CALayer *)layer
 {
-    layer.shadowColor = [UIColor grayColor].CGColor;
+    layer.shadowColor = [UIColor darkGrayColor].CGColor;
     layer.shadowOpacity = 1;
     layer.shadowOffset = CGSizeMake(0, 0);
     layer.shadowRadius = 10;

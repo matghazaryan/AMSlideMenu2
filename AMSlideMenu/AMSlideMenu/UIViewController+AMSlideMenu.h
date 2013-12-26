@@ -21,7 +21,7 @@
 - (void)addRightMenuButton;
 
 //
-// MUST BE USED in viewWillAppear:
+// ABOVE METHODS MUST BE USED in viewWillAppear:
 //
 
 /**

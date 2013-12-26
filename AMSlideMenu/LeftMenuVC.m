@@ -10,4 +10,10 @@
 
 @implementation LeftMenuVC
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+}
+
 @end
