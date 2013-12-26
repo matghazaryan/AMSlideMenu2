@@ -7,9 +7,14 @@
 //
 
 #import "UIViewController+AMSlideMenu.h"
+
 #import "AMSlideMenuMainViewController.h"
 
 @implementation UIViewController (AMSlideMenu)
+
+/*----------------------------------------------------*/
+#pragma mark - Public Actions -
+/*----------------------------------------------------*/
 
 - (void)addLeftMenuButton
 {
@@ -61,6 +66,10 @@
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
     mainVC.leftPanDisabled = YES;
 }
+
+/*----------------------------------------------------*/
+#pragma mark - Lifecycle -
+/*----------------------------------------------------*/
 
 - (void)dealloc
 {

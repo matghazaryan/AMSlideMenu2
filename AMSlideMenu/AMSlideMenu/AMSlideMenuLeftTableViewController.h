@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class AMSlideMenuMainViewController;
+
 @interface AMSlideMenuLeftTableViewController : UITableViewController
 
 @property (strong, nonatomic) AMSlideMenuMainViewController *mainVC;

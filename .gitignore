@@ -1,0 +1,10 @@
+
+*.xccheckout
+
+*.xcuserstate
+
+*.xcsettings
+
+*.xcscheme
+
+*.plist

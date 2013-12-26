@@ -7,6 +7,7 @@
 //
 
 #import "AMSlideMenuMainViewController.h"
+
 #import "UIViewController+AMSlideMenu.h"
 
 #define kPanMinTranslationX 15.0f
@@ -38,20 +39,13 @@ static NSMutableArray *allInstances;
 
 @implementation AMSlideMenuMainViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+/*----------------------------------------------------*/
+#pragma mark - Lifecycle -
+/*----------------------------------------------------*/
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-
     if (!allInstances)
     {
         allInstances = [NSMutableArray array];
@@ -63,7 +57,56 @@ static NSMutableArray *allInstances;
     [self setup];
 }
 
-#pragma mark -
+- (void)handleInterfaceOrientationChangedNotification:(NSNotification *)not
+{
+    if ([self.currentActiveNVC shouldAutorotate])
+    {
+        CGRect bounds = self.view.bounds;
+        self.rightMenu.view.frame = CGRectMake(bounds.size.width - [self rightMenuWidth],0,bounds.size.width,bounds.size.height);
+        if (self.overlayView && self.overlayView.superview)
+        {
+            self.overlayView.frame = CGRectMake(0, 0, self.currentActiveNVC.view.frame.size.width, self.currentActiveNVC.view.frame.size.height);
+        }
+        
+        
+        double delayInSeconds = 0.25f;
+        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+            [self configureSlideLayer:self.currentActiveNVC.view.layer];
+        });
+        
+        
+        //fix orientation for iPhone
+        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+        {
+            UIInterfaceOrientation toInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+            CGRect frame = self.currentActiveNVC.navigationBar.frame;
+            if (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+                frame.size.height = 44;
+            } else {
+                frame.size.height = 32;
+            }
+            self.currentActiveNVC.navigationBar.frame = frame;
+        }
+    }
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if ([self.currentActiveNVC shouldAutorotate])
+    {
+        self.currentActiveNVC.view.layer.shadowOpacity = 0;
+    }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+/*----------------------------------------------------*/
+#pragma mark - Static methods -
+/*----------------------------------------------------*/
 
 + (NSArray *)allInstances
 {
@@ -82,8 +125,10 @@ static NSMutableArray *allInstances;
     return nil;
 }
 
-#pragma mark -
-#pragma mark - datasource
+/*----------------------------------------------------*/
+#pragma mark - Datasource -
+/*----------------------------------------------------*/
+
 - (CGFloat)leftMenuWidth
 {
     return 250;
@@ -143,7 +188,10 @@ static NSMutableArray *allInstances;
     return 100.0f;
 }
 
-#pragma mark - Setup
+/*----------------------------------------------------*/
+#pragma mark - Private methods -
+/*----------------------------------------------------*/
+
 - (void)setup
 {
     self.isInitialStart = YES;
@@ -200,7 +248,9 @@ static NSMutableArray *allInstances;
     self.isInitialStart = NO;
 }
 
-#pragma mark - Actions
+/*----------------------------------------------------*/
+#pragma mark - Public Actions -
+/*----------------------------------------------------*/
 
 - (void)openLeftMenu
 {
@@ -430,7 +480,10 @@ static NSMutableArray *allInstances;
 //    self.panGesture.enabled = NO;
 }
 
-#pragma mark - Gestures
+/*----------------------------------------------------*/
+#pragma mark - Gesture Recognizers -
+/*----------------------------------------------------*/
+
 - (void)handleTapGesture:(UITapGestureRecognizer *)tap
 {
     [self closeMenu];
@@ -631,55 +684,6 @@ static NSMutableArray *allInstances;
     panningPreviousPosition = panningView.frame.origin.x;
     
     [gesture setTranslation:CGPointZero inView:panningView];
-}
-
-#pragma mark -
-
-- (void)handleInterfaceOrientationChangedNotification:(NSNotification *)not
-{
-    if ([self.currentActiveNVC shouldAutorotate])
-    {
-        CGRect bounds = self.view.bounds;
-        self.rightMenu.view.frame = CGRectMake(bounds.size.width - [self rightMenuWidth],0,bounds.size.width,bounds.size.height);
-        if (self.overlayView && self.overlayView.superview)
-        {
-            self.overlayView.frame = CGRectMake(0, 0, self.currentActiveNVC.view.frame.size.width, self.currentActiveNVC.view.frame.size.height);
-        }
-        
-
-        double delayInSeconds = 0.25f;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self configureSlideLayer:self.currentActiveNVC.view.layer];
-        });
-
-
-        //fix orientation for iPhone
-        if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-        {
-            UIInterfaceOrientation toInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-            CGRect frame = self.currentActiveNVC.navigationBar.frame;
-            if (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
-                frame.size.height = 44;
-            } else {
-                frame.size.height = 32;
-            }
-            self.currentActiveNVC.navigationBar.frame = frame;
-        }
-    }
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    if ([self.currentActiveNVC shouldAutorotate])
-    {
-        self.currentActiveNVC.view.layer.shadowOpacity = 0;
-    }
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

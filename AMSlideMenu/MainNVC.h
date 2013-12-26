@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface testNavViewController : UINavigationController
+@interface MainNVC : UINavigationController
 
 @end
