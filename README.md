@@ -12,7 +12,8 @@ Whith this library you can create 3 types of sliding menus: <br>
 
 
 This repo contains project that demonstrate usage of <b> AMSlideMenu </b>.<br>
-This project created in <b>Xcode 5</b> , so this library is <b>fully compatible with iOS 7</b>
+This project created in <b>Xcode 5</b> , so this library is <b>fully compatible with iOS 7.</b>
+Works for both <b>iPhone</b> and <b>iPad</b>.
 
 USAGE
 =====
