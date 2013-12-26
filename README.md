@@ -90,6 +90,6 @@ and implement protocol named 'AMSlideMenuProtocols'.
 - (void)rightMenuDidClose;
 </pre>
 
-<img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshotLeftMenu.png" width="320" height="580">
-<img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshotRightMenu.png" width="320" height="580">
+<img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenShotLeftMenu.png" width="320" height="580"><br>
+<img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshowRightMenu.png" width="320" height="580"><br>
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshotBothMenu.png" width="320" height="580">
