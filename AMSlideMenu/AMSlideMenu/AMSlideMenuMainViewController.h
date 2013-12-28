@@ -191,5 +191,5 @@ typedef enum {
  * @param Menu enum from where switch should be done
  * @param indexPath destination ViewController's indexPath in menu
  */
-- (void)openContentMenuForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath;
+- (void)openContentViewControllerForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath;
 @end

@@ -446,7 +446,7 @@ static NSMutableArray *allInstances;
     }
 }
 
-- (void)openContentMenuForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath
+- (void)openContentViewControllerForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath
 {
     if (menu == AMSlideMenuLeft)
     {

@@ -8,8 +8,6 @@
 
 #import "UIViewController+AMSlideMenu.h"
 
-#import "AMSlideMenuMainViewController.h"
-
 @implementation UIViewController (AMSlideMenu)
 
 /*----------------------------------------------------*/
