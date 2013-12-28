@@ -123,6 +123,21 @@ If you want to programmatically change content vc to any vc at indexPath in your
   [mainVC openContentViewControllerForMenu:AMSlideMenuRight atIndexPath:indexPath];
 </pre>
 
+If you want to give <b>deep effect</b> to menus like in demo, then override in MainVC this funcion and return YES:
+<pre>
+// Enabling Deepnes on left menu
+- (BOOL)deepnessForLeftMenu
+{
+    return YES;
+}
+
+// Enabling Deepnes on left menu
+- (BOOL)deepnessForRightMenu
+{
+    return YES;
+}
+</pre>
+
 SCREENSHOTS
 ===========
 
