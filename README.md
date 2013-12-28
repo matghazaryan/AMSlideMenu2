@@ -107,6 +107,23 @@ and implement protocol named 'AMSlideMenuProtocols'.
 - (void)rightMenuDidClose;
 </pre>
 
+If you want to get MainVC's instance in any content VC, then call:
+<pre>
+AMSlideMenuMainViewController *mainVC = [self mainSlideMenu];
+</pre>
+Don't forget to import <b>"UIViewController+AMSlideMenu.h"</b> in your content VC.<br>
+
+If you want to programmatically change content vc to any vc at indexPath in your left/right menu then call<br>
+-(void)openContentViewControllerForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath;
+<pre>
+  AMSlideMenuMainViewController *mainVC = [self mainSlideMenu];
+  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+  [mainVC openContentViewControllerForMenu:AMSlideMenuRight atIndexPath:indexPath];
+</pre>
+
+SCREENSHOTS
+===========
+
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenShotLeftMenu.png" width="320" height="580"><br>
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshowRightMenu.png" width="320" height="580"><br>
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshotBothMenu.png" width="320" height="580">
