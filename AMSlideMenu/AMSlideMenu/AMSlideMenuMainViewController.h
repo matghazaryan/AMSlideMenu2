@@ -17,6 +17,11 @@ typedef enum {
 } AMPrimaryMenu;
 
 typedef enum {
+    AMSlideMenuLeft,
+    AMSlideMenuRight
+} AMSlideMenu;
+
+typedef enum {
     AMSlideMenuClosed,
     AMSlideMenuLeftOpened,
     AMSlideMenuRightOpened,
@@ -181,4 +186,10 @@ typedef enum {
 - (void)switchCurrentActiveControllerToController:(UINavigationController *)nvc
                                          fromMenu:(UITableViewController *)menu;
 
+/**
+ * makes switch between active controller to input controller at indexPath in input menu
+ * @param Menu enum from where switch should be done
+ * @param indexPath destination ViewController's indexPath in menu
+ */
+- (void)openContentMenuForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath;
 @end

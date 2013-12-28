@@ -446,6 +446,29 @@ static NSMutableArray *allInstances;
     }
 }
 
+- (void)openContentMenuForMenu:(AMSlideMenu)menu atIndexPath:(NSIndexPath *)indexPath
+{
+    if (menu == AMSlideMenuLeft)
+    {
+        if (!self.leftMenu)
+            return;
+        
+        NSString *identifier = [self segueIdentifierForIndexPathInLeftMenu:indexPath];
+        [self.leftMenu.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self.leftMenu performSegueWithIdentifier:identifier sender:self.leftMenu];
+    }
+    else if (menu == AMSlideMenuRight)
+    {
+        if (!self.rightMenu)
+            return;
+        
+        NSString *identifier = [self segueIdentifierForIndexPathInRightMenu:indexPath];
+        
+        [self.rightMenu.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self.rightMenu performSegueWithIdentifier:identifier sender:self.rightMenu];
+    }
+}
+
 - (void)addGestures
 {
     if (self.overlayView)

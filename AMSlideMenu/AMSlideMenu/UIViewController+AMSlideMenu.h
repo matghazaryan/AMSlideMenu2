@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AMSlideMenuMainViewController.h"
 
 @interface UIViewController (AMSlideMenu)
 
@@ -47,5 +48,11 @@
  * by Pan gesture recognizer
  */
 - (void)enableSlidePanGestureForRightMenu;
+
+
+/**
+ * Getting current vc's  Main Slideing View Controller
+ */
+- (AMSlideMenuMainViewController *)mainSlideMenu;
 
 @end

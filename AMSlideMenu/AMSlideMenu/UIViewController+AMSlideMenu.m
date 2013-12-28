@@ -67,6 +67,11 @@
     mainVC.leftPanDisabled = YES;
 }
 
+- (AMSlideMenuMainViewController *)mainSlideMenu
+{
+    AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
+    return mainVC;
+}
 /*----------------------------------------------------*/
 #pragma mark - Lifecycle -
 /*----------------------------------------------------*/
