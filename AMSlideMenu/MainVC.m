@@ -14,6 +14,15 @@
 
 @implementation MainVC
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
+    view.backgroundColor = [UIColor blackColor];
+    [self fixStatusBarWithView:view];
+}
+
 /*----------------------------------------------------*/
 #pragma mark - Overriden Methods -
 /*----------------------------------------------------*/
@@ -61,27 +70,27 @@
 - (void)configureLeftMenuButton:(UIButton *)button
 {
     CGRect frame = button.frame;
-    frame = CGRectMake(0, 0, 41, 25);
+    frame = CGRectMake(0, 0, 25, 13);
     button.frame = frame;
     button.backgroundColor = [UIColor clearColor];
-    [button setImage:[UIImage imageNamed:@"icon-menu.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"simpleMenuButton"] forState:UIControlStateNormal];
 }
 
 - (void)configureRightMenuButton:(UIButton *)button
 {
     CGRect frame = button.frame;
-    frame = CGRectMake(0, 0, 41, 35);
+    frame = CGRectMake(0, 0, 25, 13);
     button.frame = frame;
     button.backgroundColor = [UIColor clearColor];
-    [button setImage:[UIImage imageNamed:@"icon-menu.png"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"simpleMenuButton"] forState:UIControlStateNormal];
 }
 
 - (void) configureSlideLayer:(CALayer *)layer
 {
-    layer.shadowColor = [UIColor darkGrayColor].CGColor;
+    layer.shadowColor = [UIColor blackColor].CGColor;
     layer.shadowOpacity = 1;
     layer.shadowOffset = CGSizeMake(0, 0);
-    layer.shadowRadius = 10;
+    layer.shadowRadius = 5;
     layer.masksToBounds = NO;
     layer.shadowPath =[UIBezierPath bezierPathWithRect:layer.bounds].CGPath;
 }
@@ -89,6 +98,19 @@
 - (AMPrimaryMenu)primaryMenu
 {
     return AMPrimaryMenuLeft;
+}
+
+
+// Enabling Deepnes on left menu
+- (BOOL)deepnessForLeftMenu
+{
+    return YES;
+}
+
+// Enabling Deepnes on left menu
+- (BOOL)deepnessForRightMenu
+{
+    return YES;
 }
 
 @end

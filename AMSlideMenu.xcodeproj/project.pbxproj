@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E59F22B186F038400AEFD6F /* simpleMenuButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E59F229186F038400AEFD6F /* simpleMenuButton.png */; };
+		3E59F22C186F038400AEFD6F /* simpleMenuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E59F22A186F038400AEFD6F /* simpleMenuButton@2x.png */; };
 		3E9BC24C186C15B6002B1FE3 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC24A186C15B6002B1FE3 /* icon-menu.png */; };
 		3E9BC24D186C15B6002B1FE3 /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */; };
 		3E9BC255186C2992002B1FE3 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E59F229186F038400AEFD6F /* simpleMenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpleMenuButton.png; sourceTree = "<group>"; };
+		3E59F22A186F038400AEFD6F /* simpleMenuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simpleMenuButton@2x.png"; sourceTree = "<group>"; };
 		3E9BC24A186C15B6002B1FE3 /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
 		3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu@2x.png"; sourceTree = "<group>"; };
 		3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 		3E9C29981869CAD700E7F5E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E59F229186F038400AEFD6F /* simpleMenuButton.png */,
+				3E59F22A186F038400AEFD6F /* simpleMenuButton@2x.png */,
 				3E9BC24A186C15B6002B1FE3 /* icon-menu.png */,
 				3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */,
 				3EE3E69B186B2F9300427ECF /* icon.png */,
@@ -316,7 +322,9 @@
 				3EE3E69D186B2F9300427ECF /* icon.png in Resources */,
 				3E9BC24D186C15B6002B1FE3 /* icon-menu@2x.png in Resources */,
 				3E9BC255186C2992002B1FE3 /* Main~iPad.storyboard in Resources */,
+				3E59F22B186F038400AEFD6F /* simpleMenuButton.png in Resources */,
 				3E9BC24C186C15B6002B1FE3 /* icon-menu.png in Resources */,
+				3E59F22C186F038400AEFD6F /* simpleMenuButton@2x.png in Resources */,
 				3E9C299C1869CAD700E7F5E5 /* InfoPlist.strings in Resources */,
 				3E9C29A51869CAD700E7F5E5 /* Main.storyboard in Resources */,
 			);

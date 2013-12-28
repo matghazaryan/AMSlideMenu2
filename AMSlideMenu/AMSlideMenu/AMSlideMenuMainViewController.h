@@ -126,6 +126,30 @@ typedef enum {
  */
 - (CGFloat)panGestureWarkingAreaPercent;
 
+/**
+ * Override this method if you want to enable or disable deepness in left menu
+ * Default value is NO
+ * @return YES or NO
+ */
+- (BOOL)deepnessForLeftMenu;
+
+/**
+ * Override this method if you want to enable or disable deepness in right menu
+ * Default value is NO
+ * @return YES or NO
+ */
+- (BOOL)deepnessForRightMenu;
+
+/**
+ * Override this method if you want to fix status bar with custom view
+ * @method
+ * Works ONLY for iOS > 7.0 !
+ * @method
+ * Default value is nil
+ * @param UIView* that will be shown as background of status bar. Must be 20px height.
+ */
+- (void)fixStatusBarWithView:(UIView *)view;
+
 #pragma mark - Methods
 
 #pragma mark -- Actions

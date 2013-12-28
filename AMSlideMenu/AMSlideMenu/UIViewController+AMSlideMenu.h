@@ -21,6 +21,17 @@
  */
 - (void)addRightMenuButton;
 
+/**
+ * Removes left menu top button
+ */
+- (void)removeLeftMenuButton;
+
+/**
+ * Removes right menu top button
+ */
+- (void)removeRightMenuButton;
+
+
 //
 // ABOVE METHODS MUST BE USED in viewWillAppear:
 //

@@ -23,8 +23,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Disabling pan gesture for left menu
-    [self disableSlidePanGestureForLeftMenu];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    //If this vc
+    if (self.navigationController.viewControllers.count > 1)
+    {
+        // Disabling pan gesture for left menu
+        [self disableSlidePanGestureForLeftMenu];
+    }
     
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
     if (mainVC.rightMenu)

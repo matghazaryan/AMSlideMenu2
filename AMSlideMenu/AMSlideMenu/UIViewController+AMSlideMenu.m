@@ -40,6 +40,20 @@
     navItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
 }
 
+- (void)removeLeftMenuButton
+{
+    UINavigationItem *navItem = self.navigationItem;
+    
+    navItem.leftBarButtonItem = nil;
+}
+
+- (void)removeRightMenuButton
+{
+    UINavigationItem *navItem = self.navigationItem;
+
+    navItem.rightBarButtonItem = nil;
+}
+
 - (void)enableSlidePanGestureForLeftMenu
 {
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];

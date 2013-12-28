@@ -58,16 +58,7 @@
         
         navItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     }
-    
 
-    UIInterfaceOrientation toInterfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        if (destinationNVC.view.layer.bounds.size.width < destinationNVC.view.layer.bounds.size.height)
-        {
-            
-        }
-    }
 
     //Waiting for calling viewWillApear in nvc
     double delayInSeconds = 0;
