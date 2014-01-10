@@ -131,7 +131,7 @@ If you want to give <b>deep effect</b> to menus like in demo, then override in M
     return YES;
 }
 
-// Enabling Deepnes on left menu
+// Enabling Deepnes on right menu
 - (BOOL)deepnessForRightMenu
 {
     return YES;
