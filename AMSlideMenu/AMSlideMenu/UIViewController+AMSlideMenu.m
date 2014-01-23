@@ -6,13 +6,23 @@
 //  Copyright (c) 2013 Artur Mkrtchyan. All rights reserved.
 //
 
+#import <objc/runtime.h>
+#import <objc/message.h>
 #import "UIViewController+AMSlideMenu.h"
+
 
 @implementation UIViewController (AMSlideMenu)
 
 /*----------------------------------------------------*/
 #pragma mark - Public Actions -
 /*----------------------------------------------------*/
+
++ (void)load
+{
+    Method origMethod = class_getInstanceMethod([self class], NSSelectorFromString(@"dealloc"));
+    Method newMethod = class_getInstanceMethod([self class], @selector(my_dealloc));
+    method_exchangeImplementations(origMethod, newMethod);
+}
 
 - (void)addLeftMenuButton
 {
@@ -88,10 +98,13 @@
 #pragma mark - Lifecycle -
 /*----------------------------------------------------*/
 
-- (void)dealloc
+- (void)my_dealloc
 {
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
     mainVC.leftPanDisabled = NO;
     mainVC.rightPanDisabled = NO;
+    
+    [self my_dealloc];
 }
+
 @end
