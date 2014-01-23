@@ -9,8 +9,8 @@
 #import "AMSlideMenuMainViewController.h"
 
 #define kPanMinTranslationX 15.0f
-#define kMenuOpenAminationDuration 0.3f
-#define kMenuCloseAminationDuration 0.3f
+#define kMenuOpenAminationDuration 0.35f
+#define kMenuCloseAminationDuration 0.35f
 
 #define kMenuTransformScale CATransform3DMakeScale(0.85, 0.85, 0.85)
 #define kMenuLayerInitialOpacity 0.4f
