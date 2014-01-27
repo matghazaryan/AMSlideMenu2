@@ -887,10 +887,7 @@ static NSMutableArray *allInstances;
         self.leftMenu.view.layer.transform = CATransform3DMakeScale(cx, cy, cz);
         self.leftMenu.view.layer.opacity = opacity;
 
-        if (self.statusBarView)
-        {
-            self.statusBarView.layer.opacity = 1 - panningView.frame.origin.x / [self leftMenuWidth];
-        }
+        
     }
     else if (menu == AMSlideMenuRight && panningView.frame.origin.x != 0 && [self deepnessForRightMenu])
     {
@@ -902,10 +899,20 @@ static NSMutableArray *allInstances;
         
         self.rightMenu.view.layer.transform = CATransform3DMakeScale(cx, cy, cz);
         self.rightMenu.view.layer.opacity = opacity;
-        
+    }
+    
+    if (menu == AMSlideMenuLeft && panningView.frame.origin.x != 0)
+    {
         if (self.statusBarView)
         {
-            self.statusBarView.layer.opacity = 1 - abs(panningView.frame.origin.x) / [self leftMenuWidth];
+            self.statusBarView.layer.opacity = 1 - panningView.frame.origin.x / [self leftMenuWidth];
+        }
+    }
+    else if (menu == AMSlideMenuRight && panningView.frame.origin.x != 0)
+    {
+        if (self.statusBarView)
+        {
+            self.statusBarView.layer.opacity = 1 - abs(panningView.frame.origin.x) / [self rightMenuWidth];
         }
     }
 }

@@ -169,7 +169,7 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="ayi-pF-slg" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Lzf-iv-0yg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Lzf-iv-0yg">
                         <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="-642" y="1224"/>
         </scene>
-        <!--View Controller - Slide 1-->
+        <!--Slide1VC - Slide 1-->
         <scene sceneID="J9F-Gq-9cA">
             <objects>
-                <viewController id="F2A-6i-fxx" sceneMemberID="viewController">
+                <viewController id="F2A-6i-fxx" customClass="Slide1VC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5rD-bo-g3X">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -217,6 +217,13 @@
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iK3-Pc-eFx">
+                                        <rect key="frame" x="139" y="476" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

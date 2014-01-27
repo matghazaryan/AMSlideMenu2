@@ -17,10 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
-    view.backgroundColor = [UIColor blackColor];
-    [self fixStatusBarWithView:view];
+
 }
 
 /*----------------------------------------------------*/
@@ -92,7 +89,7 @@
     layer.shadowOffset = CGSizeMake(0, 0);
     layer.shadowRadius = 5;
     layer.masksToBounds = NO;
-    layer.shadowPath =[UIBezierPath bezierPathWithRect:layer.bounds].CGPath;
+    layer.shadowPath =[UIBezierPath bezierPathWithRect:self.view.layer.bounds].CGPath;
 }
 
 - (AMPrimaryMenu)primaryMenu
@@ -104,7 +101,7 @@
 // Enabling Deepnes on left menu
 - (BOOL)deepnessForLeftMenu
 {
-    return YES;
+    return NO;
 }
 
 // Enabling Deepnes on left menu

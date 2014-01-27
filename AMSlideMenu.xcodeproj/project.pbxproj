@@ -35,6 +35,8 @@
 		3E9C29E01869CE4300E7F5E5 /* LeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29DF1869CE4300E7F5E5 /* LeftMenuVC.m */; };
 		3E9C29E61869CE8200E7F5E5 /* RightMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29E51869CE8200E7F5E5 /* RightMenuVC.m */; };
 		3E9C29EA1869D9A800E7F5E5 /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29E91869D9A800E7F5E5 /* UIViewController+AMSlideMenu.m */; };
+		3EAAF2F11896880800C2F701 /* Slide1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAF2F01896880800C2F701 /* Slide1VC.m */; };
+		3EAAF311189689CF00C2F701 /* UIColor+CreateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAF305189689CF00C2F701 /* UIColor+CreateMethods.m */; };
 		3EE3E69A186B1F6100427ECF /* PushedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3E699186B1F6100427ECF /* PushedVC.m */; };
 		3EE3E69D186B2F9300427ECF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE3E69B186B2F9300427ECF /* icon.png */; };
 		3EE3E69E186B2F9300427ECF /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE3E69C186B2F9300427ECF /* icon@2x.png */; };
@@ -94,6 +96,10 @@
 		3E9C29E71869D20E00E7F5E5 /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
 		3E9C29E81869D9A800E7F5E5 /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
 		3E9C29E91869D9A800E7F5E5 /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		3EAAF2EF1896880800C2F701 /* Slide1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slide1VC.h; sourceTree = "<group>"; };
+		3EAAF2F01896880800C2F701 /* Slide1VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Slide1VC.m; sourceTree = "<group>"; };
+		3EAAF304189689CF00C2F701 /* UIColor+CreateMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+CreateMethods.h"; sourceTree = "<group>"; };
+		3EAAF305189689CF00C2F701 /* UIColor+CreateMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+CreateMethods.m"; sourceTree = "<group>"; };
 		3EE3E698186B1F6100427ECF /* PushedVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushedVC.h; sourceTree = "<group>"; };
 		3EE3E699186B1F6100427ECF /* PushedVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushedVC.m; sourceTree = "<group>"; };
 		3EE3E69B186B2F9300427ECF /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 		3E9C29DD1869CE2300E7F5E5 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3EAAF2F2189689CF00C2F701 /* Categories */,
 				3E9C29D91869CE0E00E7F5E5 /* MainVC.h */,
 				3E9C29DA1869CE0E00E7F5E5 /* MainVC.m */,
 				3E9C29DE1869CE4300E7F5E5 /* LeftMenuVC.h */,
@@ -237,8 +244,19 @@
 				3E9C29E51869CE8200E7F5E5 /* RightMenuVC.m */,
 				3EE3E698186B1F6100427ECF /* PushedVC.h */,
 				3EE3E699186B1F6100427ECF /* PushedVC.m */,
+				3EAAF2EF1896880800C2F701 /* Slide1VC.h */,
+				3EAAF2F01896880800C2F701 /* Slide1VC.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3EAAF2F2189689CF00C2F701 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				3EAAF304189689CF00C2F701 /* UIColor+CreateMethods.h */,
+				3EAAF305189689CF00C2F701 /* UIColor+CreateMethods.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +365,8 @@
 			files = (
 				3E9C29CF1869CD2C00E7F5E5 /* AMSlideMenuContentSegue.m in Sources */,
 				3E9C29D81869CD8B00E7F5E5 /* AMSlideMenuRightTableViewController.m in Sources */,
+				3EAAF2F11896880800C2F701 /* Slide1VC.m in Sources */,
+				3EAAF311189689CF00C2F701 /* UIColor+CreateMethods.m in Sources */,
 				3E9C29A21869CAD700E7F5E5 /* AppDelegate.m in Sources */,
 				3E9C29DB1869CE0E00E7F5E5 /* MainVC.m in Sources */,
 				3E9C29E01869CE4300E7F5E5 /* LeftMenuVC.m in Sources */,
