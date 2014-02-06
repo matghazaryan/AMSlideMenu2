@@ -61,7 +61,7 @@
 
 - (CGFloat)rightMenuWidth
 {
-    return 250;
+    return 180;
 }
 
 - (void)configureLeftMenuButton:(UIButton *)button
