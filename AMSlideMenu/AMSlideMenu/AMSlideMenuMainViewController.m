@@ -65,7 +65,7 @@ static NSMutableArray *allInstances;
     if ([self.currentActiveNVC shouldAutorotate])
     {
         CGRect bounds = self.view.bounds;
-        self.rightMenu.view.frame = CGRectMake(0,0,bounds.size.width,bounds.size.height);
+        self.rightMenu.view.frame = CGRectMake(bounds.size.width - [self rightMenuWidth],0,bounds.size.width,bounds.size.height);
         self.leftMenu.view.frame = CGRectMake(0,0,bounds.size.width,bounds.size.height);
         if (self.overlayView && self.overlayView.superview)
         {
