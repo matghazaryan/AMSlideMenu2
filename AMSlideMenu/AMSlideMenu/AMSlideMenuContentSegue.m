@@ -24,6 +24,7 @@
     AMSlideMenuMainViewController *mainVC = (AMSlideMenuMainViewController *)sourceVC.parentViewController;    
     
     UINavigationItem *navItem = mainVC.currentActiveNVC.navigationBar.topItem;
+    [mainVC addChildViewController:destinationNVC];
     
     if (!navItem)
         navItem = destinationNVC.navigationBar.topItem;
