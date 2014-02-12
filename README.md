@@ -17,6 +17,19 @@ This repo contains project that demonstrate usage of <b> AMSlideMenu </b>.<br>
 This project created in <b>Xcode 5</b> , so this library is <b>fully compatible with iOS 7.</b><br>
 Works for both <b>iPhone</b> and <b>iPad</b>.
 
+
+### Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like AFNetworking in your projects. See the ["Getting Started" guide for more information](https://github.com/AFNetworking/AFNetworking/wiki/Getting-Started-with-AFNetworking).
+
+#### Podfile
+
+```ruby
+pod "AMSlideMenu", "~> 1.0.0"
+```
+
+
+
 USAGE
 =====
 [![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenu/youtube.png)](http://www.youtube.com/watch?v=y33t_bWS_Zk)
