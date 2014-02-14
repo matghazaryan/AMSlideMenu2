@@ -19,6 +19,6 @@ Works for both iPhone and iPad.
   s.homepage     = "https://github.com/arturdev/AMSlideMenu"
   s.license      = 'MIT'
   s.author       = { "Artur Mkrtchyan" => "mkrtarturdev@gmail.com" }
-  s.source_files = 'AMSlideMenu/AMSlideMenu/*'
+  s.source_files = 'AMSlideMenu/*'
   s.requires_arc = true
 end
