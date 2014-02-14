@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "AMSlideMenu"
-  s.version      = "1.0.2"
+  s.version      = "1.5.0"
   s.summary      = "Ease slide menu, with high customization for ios"
   s.platform     = :ios, '6.0'
-  s.source       = { :git => "https://github.com/arturdev/AMSlideMenu.git", :tag => "Version 1.0.2" }
+  s.source       = { :git => "https://github.com/arturdev/AMSlideMenu.git", :tag => "1.5.0" }
   s.description  = <<-DESC
                      This is a simple library to create sliding menus that can be used in storyboards and support static cells.
 
@@ -19,6 +19,6 @@ Works for both iPhone and iPad.
   s.homepage     = "https://github.com/arturdev/AMSlideMenu"
   s.license      = 'MIT'
   s.author       = { "Artur Mkrtchyan" => "mkrtarturdev@gmail.com" }
-  s.source_files = 'AMSlideMenu/*'
+  s.source_files = 'AMSlideMenu/*/*'
   s.requires_arc = true
 end
