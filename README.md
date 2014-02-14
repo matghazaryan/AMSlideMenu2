@@ -32,7 +32,7 @@ pod "AMSlideMenu", "~> 1.0.0"
 
 USAGE
 =====
-[![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenu/youtube.png)](http://www.youtube.com/watch?v=y33t_bWS_Zk)
+[![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/youtube.png)](http://www.youtube.com/watch?v=y33t_bWS_Zk)
 
 You can use AMSlideMenu with both static cells and dynamic cell prototypes.
 
