@@ -37,7 +37,7 @@ USAGE
 You can use AMSlideMenu with both static cells and dynamic cell prototypes.
 
 Just follow this steps:<br>
-1. Copy AMSlideMenu/<b>AMSlideMenu</b> folder to your project. <br>
+1. Copy AMSlideMenu/<b>AMSlideMenuForStoryboard</b> folder to your project. <br>
 2. Make a subclass of <b>AMSlideMenuMainViewController</b>. Assume you made <b>MainVC.h</b> and <b>MainVC.m</b> files (like in this project).<br> 
 3. Add a UIViewController to your iPhone's or iPad's storyboard and name it's class to MainVC and embed it in UINavigationController<br>
 4. For Left  Menu:<br>
