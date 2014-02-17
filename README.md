@@ -30,8 +30,8 @@ pod "AMSlideMenu", "~> 1.0.0"
 
 
 
-USAGE
-=====
+USAGE WITH STORYBOARDS
+======================
 [![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/youtube.png)](http://www.youtube.com/watch?v=y33t_bWS_Zk)
 
 You can use AMSlideMenu with both static cells and dynamic cell prototypes.
@@ -61,6 +61,15 @@ Just follow this steps:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-(NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath; <br>
 
 Thats it, you are done.
+
+USAGE WITHOT STORYBOARDS
+========================
+First of all you must add following line in your *-Prefix.pch file
+#define AMSlideMenuWithoutStoryboards
+
+For more info see demo project.
+Video tutorial coming soon.
+
 
 CUSTOMIZATION
 =============
