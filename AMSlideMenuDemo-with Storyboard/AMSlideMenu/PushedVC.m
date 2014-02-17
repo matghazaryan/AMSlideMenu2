@@ -29,7 +29,7 @@
 {
     [super viewWillAppear:animated];
     
-    //If this vc
+    //If this vc can be poped , then
     if (self.navigationController.viewControllers.count > 1)
     {
         // Disabling pan gesture for left menu

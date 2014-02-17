@@ -14,7 +14,7 @@
 #define kMenuOpenAminationDuration 0.35f
 #define kMenuCloseAminationDuration 0.35f
 
-#define kMenuTransformScale CATransform3DMakeScale(0.85, 0.85, 0.85)
+#define kMenuTransformScale CATransform3DMakeScale(0.9, 0.9, 0.9)
 #define kMenuLayerInitialOpacity 0.4f
 
 typedef enum {
@@ -23,7 +23,7 @@ typedef enum {
   AMSlidePanningStateRight
 } AMSlidePanningState;
 
-@interface AMSlideMenuMainViewController ()
+@interface AMSlideMenuMainViewController ()<UIGestureRecognizerDelegate>
 {
     AMSlidePanningState panningState;
     CGFloat panningPreviousPosition;
@@ -36,6 +36,8 @@ typedef enum {
 
 // Add transparent overlay view to currentActiveNVC's  view to disable all touches, when menu is opened
 @property (strong, nonatomic) UIView *overlayView;
+
+@property (strong, nonatomic) UIView *darknessView;
 
 @property (strong, nonatomic) UIView *statusBarView;
 
@@ -63,6 +65,7 @@ static NSMutableArray *allInstances;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceOrientationChangedNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
 
     [self setup];
+    
 }
 
 - (void)handleInterfaceOrientationChangedNotification:(NSNotification *)not
@@ -70,7 +73,7 @@ static NSMutableArray *allInstances;
     if ([self.currentActiveNVC shouldAutorotate])
     {
         CGRect bounds = self.view.bounds;
-        self.rightMenu.view.frame = CGRectMake(bounds.size.width - [self rightMenuWidth],0,bounds.size.width,bounds.size.height);
+        self.rightMenu.view.frame = CGRectMake(bounds.size.width - [self rightMenuWidth],0,[self rightMenuWidth],bounds.size.height);
         self.leftMenu.view.frame = CGRectMake(0,0,bounds.size.width,bounds.size.height);
         if (self.overlayView && self.overlayView.superview)
         {
@@ -210,9 +213,63 @@ static NSMutableArray *allInstances;
     return NO;
 }
 
+- (CGFloat)maxDarknessWhileLeftMenu
+{
+    return 0;
+}
+
+- (CGFloat)maxDarknessWhileRightMenu
+{
+    return 0;
+}
+
 /*----------------------------------------------------*/
 #pragma mark - Private methods -
 /*----------------------------------------------------*/
+
+- (void)setRightMenu:(AMSlideMenuRightTableViewController *)rightMenu
+{
+    _rightMenu = rightMenu;
+    
+    CGRect frame = _rightMenu.view.frame;
+    frame.size.width = [self rightMenuWidth];
+    _rightMenu.view.frame = frame;
+}
+
+// calls when pan gesture starting and direction is left
+- (void)rightMenuWillReveal
+{
+    [self.darknessView removeFromSuperview];
+    
+    self.darknessView = [[UIView alloc] initWithFrame:self.currentActiveNVC.view.bounds];
+    self.darknessView.backgroundColor = [UIColor blackColor];
+    self.darknessView.alpha = 0;
+    self.darknessView.layer.zPosition = 1;
+    
+    [self.currentActiveNVC.view addSubview:self.darknessView];
+
+}
+
+// calls when pan gesture starting and direction is right
+- (void)leftMenuWillReveal
+{
+    [self.darknessView removeFromSuperview];
+    
+    self.darknessView = [[UIView alloc] initWithFrame:self.currentActiveNVC.view.bounds];
+    self.darknessView.backgroundColor = [UIColor blackColor];
+    self.darknessView.alpha = 0;
+    self.darknessView.layer.zPosition = 1;
+    
+    [self.currentActiveNVC.view addSubview:self.darknessView];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UISlider class]]) {
+        // prevent recognizing touches on the slider
+        return NO;
+    }
+    return YES;
+}
 
 - (void)setup
 {
@@ -227,7 +284,59 @@ static NSMutableArray *allInstances;
     [self.panGesture addTarget:self action:@selector(handlePanGesture:)];
     
     self.tapGesture.cancelsTouchesInView = YES;
+    self.panGesture.cancelsTouchesInView = YES;
     
+    self.panGesture.delegate = self;
+    
+    /**********************************
+     *  If using storyboard
+     **********************************/
+#ifndef AMSlideMenuWithoutStoryboards    
+    if ([self primaryMenu] == AMPrimaryMenuLeft)
+    {
+        @try
+        {
+            [self performSegueWithIdentifier:@"leftMenu" sender:self];
+
+            @try {
+                [self performSegueWithIdentifier:@"rightMenu" sender:self];
+            }
+            @catch (NSException *exception) {
+                
+            }
+        }
+        @catch (NSException *exception)
+        {
+            [self performSegueWithIdentifier:@"rightMenu" sender:self];
+            NSLog(@"WARNING: You setted primaryMenu to left , but you have no segue with identifier 'leftMenu'");
+        }
+    }
+    else if ([self primaryMenu] == AMPrimaryMenuRight)
+    {
+        @try
+        {
+            [self performSegueWithIdentifier:@"rightMenu" sender:self];
+            
+            @try {
+                [self performSegueWithIdentifier:@"leftMenu" sender:self];
+            }
+            @catch (NSException *exception) {
+        
+            }
+        }
+        @catch (NSException *exception)
+        {
+            [self performSegueWithIdentifier:@"leftMenu" sender:self];
+            NSLog(@"WARNING: You setted primaryMenu to right , but you have no segue with identifier 'rightMenu'");
+        }
+    }
+    /***********************************/
+    
+    /***********************************
+     *    If not using storyboards
+     ***********************************/
+    
+#else
     if ([self primaryMenu] == AMPrimaryMenuLeft)
     {
         if (self.leftMenu)
@@ -254,6 +363,9 @@ static NSMutableArray *allInstances;
             [self.leftSegue perform];
         }
     }
+#endif
+    /*******************************************/
+    
     
     [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
     
@@ -311,6 +423,7 @@ static NSMutableArray *allInstances;
             self.statusBarView.layer.opacity = 0;
         }
         
+        self.darknessView.alpha = [self maxDarknessWhileLeftMenu];
     } completion:^(BOOL finished) {
         [self addGestures];
         [self enableGestures];
@@ -350,6 +463,8 @@ static NSMutableArray *allInstances;
         {
             self.statusBarView.layer.opacity = 0;
         }
+        
+        self.darknessView.alpha = [self maxDarknessWhileRightMenu];
     } completion:^(BOOL finished) {
         [self addGestures];
         [self enableGestures];
@@ -386,7 +501,7 @@ static NSMutableArray *allInstances;
         {
             self.statusBarView.layer.opacity = 1;
         }
-        
+        self.darknessView.alpha = 0;
     } completion:^(BOOL finished) {
 
         
@@ -394,7 +509,7 @@ static NSMutableArray *allInstances;
         [self desableGestures];
         self.menuState = AMSlideMenuClosed;
         [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
-        
+
         if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(leftMenuDidClose)])
             [self.slideMenuDelegate leftMenuDidClose];
     }];
@@ -426,6 +541,8 @@ static NSMutableArray *allInstances;
         {
             self.statusBarView.layer.opacity = 1;
         }
+        
+        self.darknessView.alpha = 0;
     } completion:^(BOOL finished) {
         
         
@@ -433,7 +550,7 @@ static NSMutableArray *allInstances;
         [self desableGestures];
         self.menuState = AMSlideMenuClosed;
         [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
-        
+
         if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(rightMenuDidClose)])
             [self.slideMenuDelegate rightMenuDidClose];
     }];
@@ -529,6 +646,7 @@ static NSMutableArray *allInstances;
                 frame.origin.y = -1 * frame.size.height;
                 self.statusBarView.frame = frame;
                 self.statusBarView.layer.opacity = 1;
+                [self.statusBarView removeFromSuperview];
                 [self.currentActiveNVC.view addSubview:self.statusBarView];
                 
                 CGRect contentFrame = self.currentActiveNVC.view.frame;
@@ -591,8 +709,9 @@ static NSMutableArray *allInstances;
     CGRect frame = self.overlayView.frame;
     frame.size = self.currentActiveNVC.view.bounds.size;
     self.overlayView.frame = frame;
-    
+    self.overlayView.layer.zPosition = 10000;
     self.overlayView.backgroundColor = [UIColor clearColor];
+
     [self.currentActiveNVC.view addSubview:self.overlayView];
     
     [self.overlayView addGestureRecognizer:self.tapGesture];
@@ -601,6 +720,8 @@ static NSMutableArray *allInstances;
 
 - (void)fixStatusBarWithView:(UIView *)view
 {
+    [self.statusBarView removeFromSuperview];
+    
     self.statusBarView = view;
     
     if (![UIApplication sharedApplication].statusBarHidden)
@@ -749,7 +870,8 @@ static NSMutableArray *allInstances;
             if (panningView.frame.origin.x + translation.x < 0)
             {
                 panningState = AMSlidePanningStateLeft;
-                
+
+                [self rightMenuWillReveal];
                 if (self.menuState == AMSlideMenuClosed)
                 {
                     self.leftMenu.view.hidden = YES;
@@ -759,7 +881,8 @@ static NSMutableArray *allInstances;
             else if(panningView.frame.origin.x + translation.x > 0)
             {
                 panningState = AMSlidePanningStateRight;
-                
+
+                [self leftMenuWillReveal];
                 if (self.menuState == AMSlideMenuClosed)
                 {
                     self.leftMenu.view.hidden = NO;
@@ -868,7 +991,8 @@ static NSMutableArray *allInstances;
     float cy = 0;
     float cz = 0;
     float opacity = 0;
-    
+
+    /********************************************* DEEPNESS EFFECT *******************************************************/
     if (menu == AMSlideMenuLeft && panningView.frame.origin.x != 0 && [self deepnessForLeftMenu])
     {
         cx = kMenuTransformScale.m11 + (panningView.frame.origin.x / [self leftMenuWidth]) * (1.0 - kMenuTransformScale.m11);
@@ -879,8 +1003,6 @@ static NSMutableArray *allInstances;
         
         self.leftMenu.view.layer.transform = CATransform3DMakeScale(cx, cy, cz);
         self.leftMenu.view.layer.opacity = opacity;
-
-        
     }
     else if (menu == AMSlideMenuRight && panningView.frame.origin.x != 0 && [self deepnessForRightMenu])
     {
@@ -893,7 +1015,9 @@ static NSMutableArray *allInstances;
         self.rightMenu.view.layer.transform = CATransform3DMakeScale(cx, cy, cz);
         self.rightMenu.view.layer.opacity = opacity;
     }
+    /********************************************* DEEPNESS EFFECT *******************************************************/
     
+    /********************************************* STATUS BAR FIX *******************************************************/
     if (menu == AMSlideMenuLeft && panningView.frame.origin.x != 0)
     {
         if (self.statusBarView)
@@ -908,5 +1032,21 @@ static NSMutableArray *allInstances;
             self.statusBarView.layer.opacity = 1 - abs(panningView.frame.origin.x) / [self rightMenuWidth];
         }
     }
+    /********************************************* STATUS BAR FIX *******************************************************/
+    
+    /********************************************* DARKNESS EFFECT *******************************************************/
+    if (menu == AMSlideMenuLeft)
+    {
+        CGFloat alpha = [self maxDarknessWhileLeftMenu] * (panningView.frame.origin.x / [self leftMenuWidth]);
+
+        self.darknessView.alpha = alpha;
+    }
+    else if(menu == AMSlideMenuRight)
+    {
+        CGFloat alpha = [self maxDarknessWhileRightMenu] * (abs(panningView.frame.origin.x) / [self rightMenuWidth]);
+        
+        self.darknessView.alpha = alpha;
+    }
+    /********************************************* DARKNESS EFFECT *******************************************************/
 }
 @end

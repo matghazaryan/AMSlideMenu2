@@ -11,7 +11,6 @@
 #import "AMSlideMenuMainViewController.h"
 
 #import "AMSlideMenuContentSegue.h"
-
 @interface AMSlideMenuRightTableViewController ()
 
 @end
@@ -29,8 +28,12 @@
 
 - (void)openContentNavigationController:(UINavigationController *)nvc
 {
+#ifdef AMSlideMenuWithoutStoryboards
     AMSlideMenuContentSegue *contentSegue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"contentSegue" source:self destination:nvc];
     [contentSegue perform];
+#else
+    NSLog(@"This methos is only for NON storyboard use! You must define AMSlideMenuWithoutStoryboards \n (e.g. #define AMSlideMenuWithoutStoryboards)");
+#endif
 }
 
 /*----------------------------------------------------*/

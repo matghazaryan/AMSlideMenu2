@@ -7,6 +7,7 @@
 //
 
 #import "MainVC.h"
+#import "UIColor+CreateMethods.h"
 
 @interface MainVC ()
 
@@ -17,7 +18,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
 }
 
 /*----------------------------------------------------*/
@@ -101,13 +101,25 @@
 // Enabling Deepnes on left menu
 - (BOOL)deepnessForLeftMenu
 {
-    return NO;
+    return YES;
 }
 
 // Enabling Deepnes on left menu
 - (BOOL)deepnessForRightMenu
 {
     return YES;
+}
+
+// Enabling darkness while left menu is opening
+- (CGFloat)maxDarknessWhileLeftMenu
+{
+    return 0.5;
+}
+
+// Enabling darkness while right menu is opening
+- (CGFloat)maxDarknessWhileRightMenu
+{
+    return 0.5;
 }
 
 @end

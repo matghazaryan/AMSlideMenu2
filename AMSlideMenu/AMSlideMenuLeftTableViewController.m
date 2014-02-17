@@ -10,6 +10,8 @@
 
 #import "AMSlideMenuMainViewController.h"
 
+#import "AMSlideMenuContentSegue.h"
+
 @interface AMSlideMenuLeftTableViewController ()
 
 @end
@@ -23,12 +25,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && ![UIApplication sharedApplication].isStatusBarHidden)
-    {
-//        self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
-    }
 }
+
+- (void)openContentNavigationController:(UINavigationController *)nvc
+{
+#ifdef AMSlideMenuWithoutStoryboards
+    AMSlideMenuContentSegue *contentSegue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"contentSegue" source:self destination:nvc];
+    [contentSegue perform];
+#else
+    NSLog(@"This methos is only for NON storyboard use! You must define AMSlideMenuWithoutStoryboards \n (e.g. #define AMSlideMenuWithoutStoryboards)");
+#endif
+}
+
 
 /*----------------------------------------------------*/
 #pragma mark - TableView Delegate -
@@ -42,4 +50,6 @@
         [self performSegueWithIdentifier:segueIdentifier sender:self];
     }
 }
+
+
 @end

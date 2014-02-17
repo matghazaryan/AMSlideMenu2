@@ -1,5 +1,5 @@
 //
-//  AMSlideMenuRightTableViewController.h
+//  AMSlideMenuLeftTableViewController.h
 //  AMSlideMenu
 //
 //  Created by Artur Mkrtchyan on 12/24/13.
@@ -10,8 +10,11 @@
 
 @class AMSlideMenuMainViewController;
 
-@interface AMSlideMenuRightTableViewController : UITableViewController
+@interface AMSlideMenuLeftTableViewController : UITableViewController
 
 @property (strong, nonatomic) AMSlideMenuMainViewController *mainVC;
+
+// Only afor non storyboard use
+- (void)openContentNavigationController:(UINavigationController *)nvc;
 
 @end

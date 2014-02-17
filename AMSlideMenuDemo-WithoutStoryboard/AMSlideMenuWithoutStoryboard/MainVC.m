@@ -65,4 +65,10 @@
 {
     return YES;
 }
+
+- (CGFloat)maxDarknessWhileRightMenu
+{
+    return 0.5f;
+}
+
 @end

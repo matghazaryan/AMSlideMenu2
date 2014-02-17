@@ -36,13 +36,13 @@
 		7545A34B18AE938E00B14C83 /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7545A34918AE938E00B14C83 /* FirstVC.xib */; };
 		7545A34E18AE93AA00B14C83 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7545A34C18AE93AA00B14C83 /* icon-menu.png */; };
 		7545A34F18AE93AA00B14C83 /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7545A34D18AE93AA00B14C83 /* icon-menu@2x.png */; };
-		75F1075E18B27CC400143C74 /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075018B27CC400143C74 /* AMSlideMenuContentSegue.m */; };
-		75F1075F18B27CC400143C74 /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075218B27CC400143C74 /* AMSlideMenuLeftMenuSegue.m */; };
-		75F1076018B27CC400143C74 /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075418B27CC400143C74 /* AMSlideMenuLeftTableViewController.m */; };
-		75F1076118B27CC400143C74 /* AMSlideMenuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075618B27CC400143C74 /* AMSlideMenuMainViewController.m */; };
-		75F1076218B27CC400143C74 /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075918B27CC400143C74 /* AMSlideMenuRightMenuSegue.m */; };
-		75F1076318B27CC400143C74 /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075B18B27CC400143C74 /* AMSlideMenuRightTableViewController.m */; };
-		75F1076418B27CC400143C74 /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F1075D18B27CC400143C74 /* UIViewController+AMSlideMenu.m */; };
+		756D31F018B2A076008E846B /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31E218B2A076008E846B /* AMSlideMenuContentSegue.m */; };
+		756D31F118B2A076008E846B /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31E418B2A076008E846B /* AMSlideMenuLeftMenuSegue.m */; };
+		756D31F218B2A076008E846B /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31E618B2A076008E846B /* AMSlideMenuLeftTableViewController.m */; };
+		756D31F318B2A076008E846B /* AMSlideMenuMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31E818B2A076008E846B /* AMSlideMenuMainViewController.m */; };
+		756D31F418B2A076008E846B /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31EB18B2A076008E846B /* AMSlideMenuRightMenuSegue.m */; };
+		756D31F518B2A076008E846B /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31ED18B2A076008E846B /* AMSlideMenuRightTableViewController.m */; };
+		756D31F618B2A076008E846B /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31EF18B2A076008E846B /* UIViewController+AMSlideMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,21 +97,21 @@
 		7545A34918AE938E00B14C83 /* FirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstVC.xib; sourceTree = "<group>"; };
 		7545A34C18AE93AA00B14C83 /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
 		7545A34D18AE93AA00B14C83 /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu@2x.png"; sourceTree = "<group>"; };
-		75F1074F18B27CC400143C74 /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
-		75F1075018B27CC400143C74 /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
-		75F1075118B27CC400143C74 /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
-		75F1075218B27CC400143C74 /* AMSlideMenuLeftMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftMenuSegue.m; sourceTree = "<group>"; };
-		75F1075318B27CC400143C74 /* AMSlideMenuLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftTableViewController.h; sourceTree = "<group>"; };
-		75F1075418B27CC400143C74 /* AMSlideMenuLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftTableViewController.m; sourceTree = "<group>"; };
-		75F1075518B27CC400143C74 /* AMSlideMenuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuMainViewController.h; sourceTree = "<group>"; };
-		75F1075618B27CC400143C74 /* AMSlideMenuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuMainViewController.m; sourceTree = "<group>"; };
-		75F1075718B27CC400143C74 /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
-		75F1075818B27CC400143C74 /* AMSlideMenuRightMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightMenuSegue.h; sourceTree = "<group>"; };
-		75F1075918B27CC400143C74 /* AMSlideMenuRightMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightMenuSegue.m; sourceTree = "<group>"; };
-		75F1075A18B27CC400143C74 /* AMSlideMenuRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightTableViewController.h; sourceTree = "<group>"; };
-		75F1075B18B27CC400143C74 /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
-		75F1075C18B27CC400143C74 /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
-		75F1075D18B27CC400143C74 /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		756D31E118B2A076008E846B /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
+		756D31E218B2A076008E846B /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
+		756D31E318B2A076008E846B /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
+		756D31E418B2A076008E846B /* AMSlideMenuLeftMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftMenuSegue.m; sourceTree = "<group>"; };
+		756D31E518B2A076008E846B /* AMSlideMenuLeftTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftTableViewController.h; sourceTree = "<group>"; };
+		756D31E618B2A076008E846B /* AMSlideMenuLeftTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuLeftTableViewController.m; sourceTree = "<group>"; };
+		756D31E718B2A076008E846B /* AMSlideMenuMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuMainViewController.h; sourceTree = "<group>"; };
+		756D31E818B2A076008E846B /* AMSlideMenuMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuMainViewController.m; sourceTree = "<group>"; };
+		756D31E918B2A076008E846B /* AMSlideMenuProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuProtocols.h; sourceTree = "<group>"; };
+		756D31EA18B2A076008E846B /* AMSlideMenuRightMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightMenuSegue.h; sourceTree = "<group>"; };
+		756D31EB18B2A076008E846B /* AMSlideMenuRightMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightMenuSegue.m; sourceTree = "<group>"; };
+		756D31EC18B2A076008E846B /* AMSlideMenuRightTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuRightTableViewController.h; sourceTree = "<group>"; };
+		756D31ED18B2A076008E846B /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
+		756D31EE18B2A076008E846B /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
+		756D31EF18B2A076008E846B /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 		7545A2D418AE915F00B14C83 /* AMSlideMenuWithoutStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				75F1074E18B27CC400143C74 /* AMSlideMenu */,
+				756D31E018B2A076008E846B /* AMSlideMenu */,
 				7545A32118AE92ED00B14C83 /* ContentVCs */,
 				7545A32018AE92E600B14C83 /* Menu */,
 				7545A30318AE92BA00B14C83 /* MainVC.h */,
@@ -306,26 +306,27 @@
 			name = FiveVC;
 			sourceTree = "<group>";
 		};
-		75F1074E18B27CC400143C74 /* AMSlideMenu */ = {
+		756D31E018B2A076008E846B /* AMSlideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				75F1074F18B27CC400143C74 /* AMSlideMenuContentSegue.h */,
-				75F1075018B27CC400143C74 /* AMSlideMenuContentSegue.m */,
-				75F1075118B27CC400143C74 /* AMSlideMenuLeftMenuSegue.h */,
-				75F1075218B27CC400143C74 /* AMSlideMenuLeftMenuSegue.m */,
-				75F1075318B27CC400143C74 /* AMSlideMenuLeftTableViewController.h */,
-				75F1075418B27CC400143C74 /* AMSlideMenuLeftTableViewController.m */,
-				75F1075518B27CC400143C74 /* AMSlideMenuMainViewController.h */,
-				75F1075618B27CC400143C74 /* AMSlideMenuMainViewController.m */,
-				75F1075718B27CC400143C74 /* AMSlideMenuProtocols.h */,
-				75F1075818B27CC400143C74 /* AMSlideMenuRightMenuSegue.h */,
-				75F1075918B27CC400143C74 /* AMSlideMenuRightMenuSegue.m */,
-				75F1075A18B27CC400143C74 /* AMSlideMenuRightTableViewController.h */,
-				75F1075B18B27CC400143C74 /* AMSlideMenuRightTableViewController.m */,
-				75F1075C18B27CC400143C74 /* UIViewController+AMSlideMenu.h */,
-				75F1075D18B27CC400143C74 /* UIViewController+AMSlideMenu.m */,
+				756D31E118B2A076008E846B /* AMSlideMenuContentSegue.h */,
+				756D31E218B2A076008E846B /* AMSlideMenuContentSegue.m */,
+				756D31E318B2A076008E846B /* AMSlideMenuLeftMenuSegue.h */,
+				756D31E418B2A076008E846B /* AMSlideMenuLeftMenuSegue.m */,
+				756D31E518B2A076008E846B /* AMSlideMenuLeftTableViewController.h */,
+				756D31E618B2A076008E846B /* AMSlideMenuLeftTableViewController.m */,
+				756D31E718B2A076008E846B /* AMSlideMenuMainViewController.h */,
+				756D31E818B2A076008E846B /* AMSlideMenuMainViewController.m */,
+				756D31E918B2A076008E846B /* AMSlideMenuProtocols.h */,
+				756D31EA18B2A076008E846B /* AMSlideMenuRightMenuSegue.h */,
+				756D31EB18B2A076008E846B /* AMSlideMenuRightMenuSegue.m */,
+				756D31EC18B2A076008E846B /* AMSlideMenuRightTableViewController.h */,
+				756D31ED18B2A076008E846B /* AMSlideMenuRightTableViewController.m */,
+				756D31EE18B2A076008E846B /* UIViewController+AMSlideMenu.h */,
+				756D31EF18B2A076008E846B /* UIViewController+AMSlideMenu.m */,
 			);
-			path = AMSlideMenu;
+			name = AMSlideMenu;
+			path = ../../AMSlideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,19 +437,19 @@
 				7545A2DB18AE915F00B14C83 /* main.m in Sources */,
 				7545A33118AE934E00B14C83 /* RightMenuTVC.m in Sources */,
 				7545A33B18AE936D00B14C83 /* ForthVC.m in Sources */,
-				75F1075E18B27CC400143C74 /* AMSlideMenuContentSegue.m in Sources */,
+				756D31F018B2A076008E846B /* AMSlideMenuContentSegue.m in Sources */,
 				7545A34A18AE938E00B14C83 /* FirstVC.m in Sources */,
 				7545A30718AE92BA00B14C83 /* MainVC.m in Sources */,
-				75F1076218B27CC400143C74 /* AMSlideMenuRightMenuSegue.m in Sources */,
-				75F1076018B27CC400143C74 /* AMSlideMenuLeftTableViewController.m in Sources */,
+				756D31F418B2A076008E846B /* AMSlideMenuRightMenuSegue.m in Sources */,
+				756D31F218B2A076008E846B /* AMSlideMenuLeftTableViewController.m in Sources */,
 				7545A34518AE938400B14C83 /* SecondVC.m in Sources */,
-				75F1076318B27CC400143C74 /* AMSlideMenuRightTableViewController.m in Sources */,
+				756D31F518B2A076008E846B /* AMSlideMenuRightTableViewController.m in Sources */,
 				7545A30818AE92BA00B14C83 /* AppDelegate.m in Sources */,
 				7545A34018AE937600B14C83 /* ThirdVC.m in Sources */,
 				7545A32C18AE934300B14C83 /* LeftMenuTVC.m in Sources */,
-				75F1075F18B27CC400143C74 /* AMSlideMenuLeftMenuSegue.m in Sources */,
-				75F1076418B27CC400143C74 /* UIViewController+AMSlideMenu.m in Sources */,
-				75F1076118B27CC400143C74 /* AMSlideMenuMainViewController.m in Sources */,
+				756D31F118B2A076008E846B /* AMSlideMenuLeftMenuSegue.m in Sources */,
+				756D31F618B2A076008E846B /* UIViewController+AMSlideMenu.m in Sources */,
+				756D31F318B2A076008E846B /* AMSlideMenuMainViewController.m in Sources */,
 				7545A33618AE936100B14C83 /* FiveVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

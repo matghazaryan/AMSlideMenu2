@@ -141,6 +141,20 @@ typedef enum {
 - (BOOL)deepnessForRightMenu;
 
 /**
+ * Override this method if you want to enable or disable darkness effect on content vc while left menu is opening
+ * Default value is 0
+ * @return CGFloat range of [0,1]
+ */
+- (CGFloat)maxDarknessWhileLeftMenu;
+
+/**
+ * Override this method if you want to enable or disable darkness effect on content vc while right menu is opening
+ * Default value is 0
+ * @return CGFloat range of [0,1]
+ */
+- (CGFloat)maxDarknessWhileRightMenu;
+
+/**
  * Override this method if you want to fix status bar with custom view
  * @method
  * Works ONLY for iOS > 7.0 !
