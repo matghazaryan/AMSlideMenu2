@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) AMSlideMenuMainViewController *mainVC;
 
+#ifdef AMSlideMenuWithoutStoryboards
 - (void)openContentNavigationController:(UINavigationController *)nvc;
+#endif
 
 @end

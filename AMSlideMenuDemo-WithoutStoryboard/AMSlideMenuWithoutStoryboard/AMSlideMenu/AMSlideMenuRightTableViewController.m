@@ -9,7 +9,6 @@
 #import "AMSlideMenuRightTableViewController.h"
 
 #import "AMSlideMenuMainViewController.h"
-
 #import "AMSlideMenuContentSegue.h"
 
 @interface AMSlideMenuRightTableViewController ()
@@ -27,11 +26,13 @@
     [super viewDidLoad];
 }
 
+#ifdef AMSlideMenuWithoutStoryboards
 - (void)openContentNavigationController:(UINavigationController *)nvc
 {
     AMSlideMenuContentSegue *contentSegue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"contentSegue" source:self destination:nvc];
     [contentSegue perform];
 }
+#endif
 
 /*----------------------------------------------------*/
 #pragma mark - TableView delegate -

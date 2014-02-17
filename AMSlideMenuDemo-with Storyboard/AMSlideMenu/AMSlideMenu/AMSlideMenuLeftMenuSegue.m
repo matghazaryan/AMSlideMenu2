@@ -36,13 +36,16 @@
 
     [mainVC.view addSubview:leftMenu.view];
     
+    [leftMenu.navigationController setNavigationBarHidden:YES];
+    
     NSIndexPath *initialIndexPath = [mainVC initialIndexPathForLeftMenu];
     
+#ifndef AMSlideMenuWithoutStoryboards
     NSString *segueIdentifier = [mainVC segueIdentifierForIndexPathInLeftMenu:initialIndexPath];
-    
-    [leftMenu.navigationController setNavigationBarHidden:YES];    
-    
     [leftMenu performSegueWithIdentifier:segueIdentifier sender:self];
+#else
+    [leftMenu tableView:leftMenu.tableView didSelectRowAtIndexPath:initialIndexPath];
+#endif
 }
 
 

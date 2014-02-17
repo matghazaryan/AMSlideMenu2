@@ -9,6 +9,7 @@
 #import "AMSlideMenuLeftTableViewController.h"
 
 #import "AMSlideMenuMainViewController.h"
+
 #import "AMSlideMenuContentSegue.h"
 
 @interface AMSlideMenuLeftTableViewController ()
@@ -26,11 +27,14 @@
     [super viewDidLoad];
 }
 
+#ifdef AMSlideMenuWithoutStoryboards
 - (void)openContentNavigationController:(UINavigationController *)nvc
 {
     AMSlideMenuContentSegue *contentSegue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"contentSegue" source:self destination:nvc];
     [contentSegue perform];
 }
+#endif
+
 /*----------------------------------------------------*/
 #pragma mark - TableView Delegate -
 /*----------------------------------------------------*/
@@ -43,4 +47,6 @@
         [self performSegueWithIdentifier:segueIdentifier sender:self];
     }
 }
+
+
 @end

@@ -34,7 +34,14 @@
     
     [rightMenu.navigationController setNavigationBarHidden:YES];
     
+    
+#ifndef AMSlideMenuWithoutStoryboards
+    NSString *segueIdentifier = [mainVC segueIdentifierForIndexPathInRightMenu:initialIndexPath];
+    [rightMenu performSegueWithIdentifier:segueIdentifier sender:self];
+#else
     [rightMenu tableView:rightMenu.tableView didSelectRowAtIndexPath:initialIndexPath];
+#endif
+
 }
 
 @end

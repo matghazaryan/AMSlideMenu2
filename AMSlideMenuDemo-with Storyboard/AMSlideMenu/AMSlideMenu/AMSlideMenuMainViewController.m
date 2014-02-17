@@ -7,6 +7,8 @@
 //
 
 #import "AMSlideMenuMainViewController.h"
+#import "AMSlideMenuLeftMenuSegue.h"
+#import "AMSlideMenuRightMenuSegue.h"
 
 #define kPanMinTranslationX 15.0f
 #define kMenuOpenAminationDuration 0.35f
@@ -21,7 +23,7 @@ typedef enum {
   AMSlidePanningStateRight
 } AMSlidePanningState;
 
-@interface AMSlideMenuMainViewController ()
+@interface AMSlideMenuMainViewController ()<UIGestureRecognizerDelegate>
 {
     AMSlidePanningState panningState;
     CGFloat panningPreviousPosition;
@@ -29,6 +31,9 @@ typedef enum {
     CGFloat panningXSpeed;  // panning speed expressed in px/ms
     bool panStarted;
 }
+@property (strong, nonatomic) AMSlideMenuLeftMenuSegue *leftSegue;
+@property (strong, nonatomic) AMSlideMenuRightMenuSegue *rightSegue;
+
 // Add transparent overlay view to currentActiveNVC's  view to disable all touches, when menu is opened
 @property (strong, nonatomic) UIView *overlayView;
 
@@ -209,6 +214,14 @@ static NSMutableArray *allInstances;
 #pragma mark - Private methods -
 /*----------------------------------------------------*/
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UISlider class]]) {
+        // prevent recognizing touches on the slider
+        return NO;
+    }
+    return YES;
+}
+
 - (void)setup
 {
     self.view.backgroundColor = [UIColor blackColor];
@@ -222,7 +235,14 @@ static NSMutableArray *allInstances;
     [self.panGesture addTarget:self action:@selector(handlePanGesture:)];
     
     self.tapGesture.cancelsTouchesInView = YES;
+    self.panGesture.cancelsTouchesInView = YES;
     
+    self.panGesture.delegate = self;
+    
+    /**********************************
+     *
+     **********************************/
+#ifndef AMSlideMenuWithoutStoryboards    
     if ([self primaryMenu] == AMPrimaryMenuLeft)
     {
         @try
@@ -261,6 +281,42 @@ static NSMutableArray *allInstances;
             NSLog(@"WARNING: You setted primaryMenu to right , but you have no segue with identifier 'rightMenu'");
         }
     }
+    /***********************************
+     *
+     ***********************************/
+    
+#else
+    if ([self primaryMenu] == AMPrimaryMenuLeft)
+    {
+        if (self.leftMenu)
+        {
+            self.leftSegue = [[AMSlideMenuLeftMenuSegue alloc] initWithIdentifier:@"leftMenu" source:self destination:self.leftMenu];
+            [self.leftSegue perform];
+        }
+        if (self.rightMenu)
+        {
+            self.rightSegue = [[AMSlideMenuRightMenuSegue alloc] initWithIdentifier:@"rightSegue" source:self destination:self.rightMenu];
+            [self.rightSegue perform];
+        }
+    }
+    else if ([self primaryMenu] == AMPrimaryMenuRight)
+    {
+        if (self.rightMenu)
+        {
+            self.rightSegue = [[AMSlideMenuRightMenuSegue alloc] initWithIdentifier:@"rightSegue" source:self destination:self.rightMenu];
+            [self.rightSegue perform];
+        }
+        if (self.leftMenu)
+        {
+            self.leftSegue = [[AMSlideMenuLeftMenuSegue alloc] initWithIdentifier:@"leftMenu" source:self destination:self.leftMenu];
+            [self.leftSegue perform];
+        }
+    }
+#endif
+    /*******************************************
+     *
+     ******************************************/
+    
     
     [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
     

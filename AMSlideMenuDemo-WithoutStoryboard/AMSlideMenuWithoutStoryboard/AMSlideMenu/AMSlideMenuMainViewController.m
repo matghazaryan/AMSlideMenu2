@@ -23,7 +23,7 @@ typedef enum {
   AMSlidePanningStateRight
 } AMSlidePanningState;
 
-@interface AMSlideMenuMainViewController ()
+@interface AMSlideMenuMainViewController ()<UIGestureRecognizerDelegate>
 {
     AMSlidePanningState panningState;
     CGFloat panningPreviousPosition;
@@ -214,6 +214,14 @@ static NSMutableArray *allInstances;
 #pragma mark - Private methods -
 /*----------------------------------------------------*/
 
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([touch.view isKindOfClass:[UISlider class]]) {
+        // prevent recognizing touches on the slider
+        return NO;
+    }
+    return YES;
+}
+
 - (void)setup
 {
     self.view.backgroundColor = [UIColor blackColor];
@@ -227,7 +235,57 @@ static NSMutableArray *allInstances;
     [self.panGesture addTarget:self action:@selector(handlePanGesture:)];
     
     self.tapGesture.cancelsTouchesInView = YES;
+    self.panGesture.cancelsTouchesInView = YES;
     
+    self.panGesture.delegate = self;
+    
+    /**********************************
+     *
+     **********************************/
+#ifndef AMSlideMenuWithoutStoryboards    
+    if ([self primaryMenu] == AMPrimaryMenuLeft)
+    {
+        @try
+        {
+            [self performSegueWithIdentifier:@"leftMenu" sender:self];
+
+            @try {
+                [self performSegueWithIdentifier:@"rightMenu" sender:self];
+            }
+            @catch (NSException *exception) {
+                
+            }
+        }
+        @catch (NSException *exception)
+        {
+            [self performSegueWithIdentifier:@"rightMenu" sender:self];
+            NSLog(@"WARNING: You setted primaryMenu to left , but you have no segue with identifier 'leftMenu'");
+        }
+    }
+    else if ([self primaryMenu] == AMPrimaryMenuRight)
+    {
+        @try
+        {
+            [self performSegueWithIdentifier:@"rightMenu" sender:self];
+            
+            @try {
+                [self performSegueWithIdentifier:@"leftMenu" sender:self];
+            }
+            @catch (NSException *exception) {
+        
+            }
+        }
+        @catch (NSException *exception)
+        {
+            [self performSegueWithIdentifier:@"leftMenu" sender:self];
+            NSLog(@"WARNING: You setted primaryMenu to right , but you have no segue with identifier 'rightMenu'");
+        }
+    }
+    /***********************************
+     *
+     ***********************************/
+    
+#else
     if ([self primaryMenu] == AMPrimaryMenuLeft)
     {
         if (self.leftMenu)
@@ -254,6 +312,11 @@ static NSMutableArray *allInstances;
             [self.leftSegue perform];
         }
     }
+#endif
+    /*******************************************
+     *
+     ******************************************/
+    
     
     [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
     
