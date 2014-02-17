@@ -62,12 +62,15 @@ Just follow this steps:<br>
 
 Thats it, you are done.
 
-USAGE WITHOT STORYBOARDS
+USAGE WITHOUT STORYBOARDS
 ========================
 First of all you must add following line in your *-Prefix.pch file
+<pre>
 #define AMSlideMenuWithoutStoryboards
+</pre>
 
 For more info see demo project.
+
 Video tutorial coming soon.
 
 
