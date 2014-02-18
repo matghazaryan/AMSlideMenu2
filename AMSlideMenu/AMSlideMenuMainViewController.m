@@ -236,18 +236,22 @@ static NSMutableArray *allInstances;
     _rightMenu.view.frame = frame;
 }
 
-// calls when pan gesture starting and direction is left
-- (void)rightMenuWillReveal
+- (void)configureDarknessView
 {
-    [self.darknessView removeFromSuperview];
-    
     self.darknessView = [[UIView alloc] initWithFrame:self.currentActiveNVC.view.bounds];
     self.darknessView.backgroundColor = [UIColor blackColor];
     self.darknessView.alpha = 0;
     self.darknessView.layer.zPosition = 1;
     
     [self.currentActiveNVC.view addSubview:self.darknessView];
+}
 
+// calls when pan gesture starting and direction is left
+- (void)rightMenuWillReveal
+{
+    [self.darknessView removeFromSuperview];
+    
+    [self configureDarknessView];
 }
 
 // calls when pan gesture starting and direction is right
@@ -255,12 +259,7 @@ static NSMutableArray *allInstances;
 {
     [self.darknessView removeFromSuperview];
     
-    self.darknessView = [[UIView alloc] initWithFrame:self.currentActiveNVC.view.bounds];
-    self.darknessView.backgroundColor = [UIColor blackColor];
-    self.darknessView.alpha = 0;
-    self.darknessView.layer.zPosition = 1;
-    
-    [self.currentActiveNVC.view addSubview:self.darknessView];
+    [self configureDarknessView];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
@@ -402,6 +401,7 @@ static NSMutableArray *allInstances;
 {
     if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(leftMenuWillOpen)])
         [self.slideMenuDelegate leftMenuWillOpen];
+    [self configureDarknessView];
     
     self.rightMenu.view.hidden = YES;
     self.leftMenu.view.hidden = NO;
@@ -443,6 +443,7 @@ static NSMutableArray *allInstances;
 {
     if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(rightMenuWillOpen)])
         [self.slideMenuDelegate rightMenuWillOpen];
+    [self configureDarknessView];
     
     self.rightMenu.view.hidden = NO;
     self.leftMenu.view.hidden = YES;
