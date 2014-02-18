@@ -32,7 +32,7 @@
             identifier = @"firstRow";
             break;
         case 1:
-            identifier = @"secondRow";
+            identifier = @"Sample";
             break;
     }
     
@@ -47,12 +47,35 @@
             identifier = @"firstRow";
             break;
         case 1:
-            identifier = @"secondRow";
+            identifier = @"Sample";
             break;
     }
     
     return identifier;
 }
+
+- (NSString *)storyboardIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath{
+    NSString *identifier = @"";
+    switch (indexPath.row) {
+        case 1:
+            identifier = @"SampleExternal";
+            break;
+    }
+    
+    return identifier;
+}
+
+- (NSString *)storyboardIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath{
+    NSString *identifier = @"";
+    switch (indexPath.row) {
+        case 1:
+            identifier = @"SampleExternal";
+            break;
+    }
+    
+    return identifier;
+}
+
 
 - (CGFloat)leftMenuWidth
 {

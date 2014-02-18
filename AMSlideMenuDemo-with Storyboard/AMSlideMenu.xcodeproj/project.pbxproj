@@ -40,6 +40,7 @@
 		756D31DD18B2A069008E846B /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D418B2A069008E846B /* AMSlideMenuRightMenuSegue.m */; };
 		756D31DE18B2A069008E846B /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D618B2A069008E846B /* AMSlideMenuRightTableViewController.m */; };
 		756D31DF18B2A069008E846B /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D818B2A069008E846B /* UIViewController+AMSlideMenu.m */; };
+		8BE1596218B42F28006187DB /* SampleExternal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1596118B42F28006187DB /* SampleExternal.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		756D31D618B2A069008E846B /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
 		756D31D718B2A069008E846B /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
 		756D31D818B2A069008E846B /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		8BE1596118B42F28006187DB /* SampleExternal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleExternal.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				3E9C29A01869CAD700E7F5E5 /* AppDelegate.h */,
 				3E9C29A11869CAD700E7F5E5 /* AppDelegate.m */,
 				3E9C29A31869CAD700E7F5E5 /* Main.storyboard */,
+				8BE1596118B42F28006187DB /* SampleExternal.storyboard */,
 				3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */,
 				3E9C29A91869CAD700E7F5E5 /* Images.xcassets */,
 				3E9C29981869CAD700E7F5E5 /* Supporting Files */,
@@ -342,6 +345,7 @@
 				3E9BC24D186C15B6002B1FE3 /* icon-menu@2x.png in Resources */,
 				3E9BC255186C2992002B1FE3 /* Main~iPad.storyboard in Resources */,
 				3E59F22B186F038400AEFD6F /* simpleMenuButton.png in Resources */,
+				8BE1596218B42F28006187DB /* SampleExternal.storyboard in Resources */,
 				3E9BC24C186C15B6002B1FE3 /* icon-menu.png in Resources */,
 				3E59F22C186F038400AEFD6F /* simpleMenuButton@2x.png in Resources */,
 				3E9C299C1869CAD700E7F5E5 /* InfoPlist.strings in Resources */,
