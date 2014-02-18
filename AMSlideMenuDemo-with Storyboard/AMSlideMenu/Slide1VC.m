@@ -38,5 +38,9 @@
     [[self mainSlideMenu] fixStatusBarWithView:view];
 }
 
+- (void)dealloc
+{
+    [[self mainSlideMenu] unfixStatusBarView];
+}
 
 @end

@@ -752,6 +752,12 @@ static NSMutableArray *allInstances;
     }
 }
 
+- (void)unfixStatusBarView
+{
+    [self.statusBarView removeFromSuperview];
+    self.statusBarView = nil;
+}
+
 - (void)enableGestures
 {
     self.tapGesture.enabled = YES;

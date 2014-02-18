@@ -155,14 +155,19 @@ typedef enum {
 - (CGFloat)maxDarknessWhileRightMenu;
 
 /**
- * Override this method if you want to fix status bar with custom view
+ * Call this method if you want to fix status bar with custom view
  * @method
  * Works ONLY for iOS > 7.0 !
- * @method
- * Default value is nil
  * @param UIView* that will be shown as background of status bar. Must be 20px height.
  */
 - (void)fixStatusBarWithView:(UIView *)view;
+
+/**
+ * Call this method if you want to uunfix status bar with custom view
+ * @method
+ * Works ONLY for iOS > 7.0 !
+ */
+- (void)unfixStatusBarView;
 
 #pragma mark - Methods
 
