@@ -39,8 +39,6 @@
     UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
     statusBarView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:statusBarView];
-    
-    [self openContentNavigationController:nil];
 }
 
 @end

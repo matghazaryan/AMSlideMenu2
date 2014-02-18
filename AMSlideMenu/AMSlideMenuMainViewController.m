@@ -238,9 +238,25 @@ static NSMutableArray *allInstances;
 
 - (void)configureDarknessView
 {
+    [self.darknessView removeFromSuperview];
+
     self.darknessView = [[UIView alloc] initWithFrame:self.currentActiveNVC.view.bounds];
     self.darknessView.backgroundColor = [UIColor blackColor];
-    self.darknessView.alpha = 0;
+
+    switch (self.menuState) {
+        case AMSlideMenuClosed:
+            self.darknessView.alpha = 0;
+            break;
+        case AMSlideMenuLeftOpened:
+            self.darknessView.alpha = [self maxDarknessWhileLeftMenu];
+            break;
+        case AMSlideMenuRightOpened:
+            self.darknessView.alpha = [self maxDarknessWhileRightMenu];
+            break;
+        default:
+            self.darknessView.alpha = 0;
+            break;
+    }
     self.darknessView.layer.zPosition = 1;
     
     [self.currentActiveNVC.view addSubview:self.darknessView];
@@ -249,16 +265,12 @@ static NSMutableArray *allInstances;
 // calls when pan gesture starting and direction is left
 - (void)rightMenuWillReveal
 {
-    [self.darknessView removeFromSuperview];
-    
     [self configureDarknessView];
 }
 
 // calls when pan gesture starting and direction is right
 - (void)leftMenuWillReveal
 {
-    [self.darknessView removeFromSuperview];
-    
     [self configureDarknessView];
 }
 
@@ -401,7 +413,9 @@ static NSMutableArray *allInstances;
 {
     if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(leftMenuWillOpen)])
         [self.slideMenuDelegate leftMenuWillOpen];
-    [self configureDarknessView];
+    
+    if (!self.darknessView)
+        [self configureDarknessView];
     
     self.rightMenu.view.hidden = YES;
     self.leftMenu.view.hidden = NO;
@@ -443,7 +457,8 @@ static NSMutableArray *allInstances;
 {
     if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(rightMenuWillOpen)])
         [self.slideMenuDelegate rightMenuWillOpen];
-    [self configureDarknessView];
+    if (!self.darknessView)
+        [self configureDarknessView];
     
     self.rightMenu.view.hidden = NO;
     self.leftMenu.view.hidden = YES;
@@ -488,7 +503,7 @@ static NSMutableArray *allInstances;
     
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
-    
+
     [UIView animateWithDuration:animated ? kMenuCloseAminationDuration : 0 animations:^{
         self.currentActiveNVC.view.frame = frame;
         
@@ -504,7 +519,6 @@ static NSMutableArray *allInstances;
         }
         self.darknessView.alpha = 0;
     } completion:^(BOOL finished) {
-
         
         [self.overlayView removeFromSuperview];
         [self desableGestures];
@@ -624,7 +638,7 @@ static NSMutableArray *allInstances;
     self.currentActiveNVC = nvc;
     
     [self.view addSubview:nvc.view];
-    
+    [self configureDarknessView];
 
     if (![UIApplication sharedApplication].statusBarHidden)
     {
