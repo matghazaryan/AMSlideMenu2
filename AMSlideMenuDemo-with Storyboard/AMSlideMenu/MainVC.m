@@ -29,7 +29,7 @@
     NSString *identifier = @"";
     switch (indexPath.row) {
         case 0:
-            identifier = @"firstRow";
+            identifier = @"Home";
             break;
         case 1:
             identifier = @"Sample";
@@ -39,24 +39,13 @@
     return identifier;
 }
 
-- (NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath
-{
-    NSString *identifier = @"";
-    switch (indexPath.row) {
-        case 0:
-            identifier = @"firstRow";
-            break;
-        case 1:
-            identifier = @"Sample";
-            break;
-    }
-    
-    return identifier;
-}
 
 - (NSString *)storyboardIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath{
     NSString *identifier = @"";
     switch (indexPath.row) {
+        case 0:
+            identifier = @"SampleExternal";
+            break;
         case 1:
             identifier = @"SampleExternal";
             break;
@@ -65,16 +54,6 @@
     return identifier;
 }
 
-- (NSString *)storyboardIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath{
-    NSString *identifier = @"";
-    switch (indexPath.row) {
-        case 1:
-            identifier = @"SampleExternal";
-            break;
-    }
-    
-    return identifier;
-}
 
 
 - (CGFloat)leftMenuWidth
@@ -82,10 +61,6 @@
     return 250;
 }
 
-- (CGFloat)rightMenuWidth
-{
-    return 180;
-}
 
 - (void)configureLeftMenuButton:(UIButton *)button
 {
@@ -96,14 +71,6 @@
     [button setImage:[UIImage imageNamed:@"simpleMenuButton"] forState:UIControlStateNormal];
 }
 
-- (void)configureRightMenuButton:(UIButton *)button
-{
-    CGRect frame = button.frame;
-    frame = CGRectMake(0, 0, 25, 13);
-    button.frame = frame;
-    button.backgroundColor = [UIColor clearColor];
-    [button setImage:[UIImage imageNamed:@"simpleMenuButton"] forState:UIControlStateNormal];
-}
 
 - (void) configureSlideLayer:(CALayer *)layer
 {
@@ -127,20 +94,9 @@
     return YES;
 }
 
-// Enabling Deepnes on left menu
-- (BOOL)deepnessForRightMenu
-{
-    return YES;
-}
 
 // Enabling darkness while left menu is opening
 - (CGFloat)maxDarknessWhileLeftMenu
-{
-    return 0.5;
-}
-
-// Enabling darkness while right menu is opening
-- (CGFloat)maxDarknessWhileRightMenu
 {
     return 0.5;
 }
