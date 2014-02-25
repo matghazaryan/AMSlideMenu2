@@ -3,7 +3,7 @@
 //  AMSlideMenu
 //
 //  Created by Artur Mkrtchyan on 12/24/13.
-//  Copyright (c) 2013 Artur Mkrtchyan. All rights reserved.
+//  Copyright (c) 2013 SocialObjects Software. All rights reserved.
 //
 
 #import "LeftMenuVC.h"

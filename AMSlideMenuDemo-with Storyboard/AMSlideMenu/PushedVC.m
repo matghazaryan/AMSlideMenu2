@@ -3,7 +3,7 @@
 //  AMSlideMenu
 //
 //  Created by Artur Mkrtchyan on 12/25/13.
-//  Copyright (c) 2013 Artur Mkrtchyan. All rights reserved.
+//  Copyright (c) 2013 SocialObjects Software. All rights reserved.
 //
 
 #import "PushedVC.h"
