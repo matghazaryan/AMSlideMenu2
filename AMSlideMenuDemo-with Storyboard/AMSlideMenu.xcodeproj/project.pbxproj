@@ -11,7 +11,6 @@
 		3E59F22C186F038400AEFD6F /* simpleMenuButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E59F22A186F038400AEFD6F /* simpleMenuButton@2x.png */; };
 		3E9BC24C186C15B6002B1FE3 /* icon-menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC24A186C15B6002B1FE3 /* icon-menu.png */; };
 		3E9BC24D186C15B6002B1FE3 /* icon-menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */; };
-		3E9BC255186C2992002B1FE3 /* Main~iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */; };
 		3E9C29921869CAD700E7F5E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29911869CAD700E7F5E5 /* Foundation.framework */; };
 		3E9C29941869CAD700E7F5E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29931869CAD700E7F5E5 /* CoreGraphics.framework */; };
 		3E9C29961869CAD700E7F5E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29951869CAD700E7F5E5 /* UIKit.framework */; };
@@ -27,7 +26,6 @@
 		3E9C29BD1869CAD700E7F5E5 /* AMSlideMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29BC1869CAD700E7F5E5 /* AMSlideMenuTests.m */; };
 		3E9C29DB1869CE0E00E7F5E5 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29DA1869CE0E00E7F5E5 /* MainVC.m */; };
 		3E9C29E01869CE4300E7F5E5 /* LeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29DF1869CE4300E7F5E5 /* LeftMenuVC.m */; };
-		3E9C29E61869CE8200E7F5E5 /* RightMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29E51869CE8200E7F5E5 /* RightMenuVC.m */; };
 		3EAAF2F11896880800C2F701 /* Slide1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAF2F01896880800C2F701 /* Slide1VC.m */; };
 		3EAAF311189689CF00C2F701 /* UIColor+CreateMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAAF305189689CF00C2F701 /* UIColor+CreateMethods.m */; };
 		3EE3E69A186B1F6100427ECF /* PushedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3E699186B1F6100427ECF /* PushedVC.m */; };
@@ -40,6 +38,7 @@
 		756D31DD18B2A069008E846B /* AMSlideMenuRightMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D418B2A069008E846B /* AMSlideMenuRightMenuSegue.m */; };
 		756D31DE18B2A069008E846B /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D618B2A069008E846B /* AMSlideMenuRightTableViewController.m */; };
 		756D31DF18B2A069008E846B /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D818B2A069008E846B /* UIViewController+AMSlideMenu.m */; };
+		8BE1596218B42F28006187DB /* SampleExternal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE1596118B42F28006187DB /* SampleExternal.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,6 @@
 		3E59F22A186F038400AEFD6F /* simpleMenuButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simpleMenuButton@2x.png"; sourceTree = "<group>"; };
 		3E9BC24A186C15B6002B1FE3 /* icon-menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu.png"; sourceTree = "<group>"; };
 		3E9BC24B186C15B6002B1FE3 /* icon-menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-menu@2x.png"; sourceTree = "<group>"; };
-		3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main~iPad.storyboard"; sourceTree = "<group>"; };
 		3E9C298E1869CAD700E7F5E5 /* AMSlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMSlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9C29911869CAD700E7F5E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E9C29931869CAD700E7F5E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -104,6 +102,7 @@
 		756D31D618B2A069008E846B /* AMSlideMenuRightTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuRightTableViewController.m; sourceTree = "<group>"; };
 		756D31D718B2A069008E846B /* UIViewController+AMSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AMSlideMenu.h"; sourceTree = "<group>"; };
 		756D31D818B2A069008E846B /* UIViewController+AMSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AMSlideMenu.m"; sourceTree = "<group>"; };
+		8BE1596118B42F28006187DB /* SampleExternal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleExternal.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +167,7 @@
 				3E9C29A01869CAD700E7F5E5 /* AppDelegate.h */,
 				3E9C29A11869CAD700E7F5E5 /* AppDelegate.m */,
 				3E9C29A31869CAD700E7F5E5 /* Main.storyboard */,
-				3E9BC254186C2992002B1FE3 /* Main~iPad.storyboard */,
+				8BE1596118B42F28006187DB /* SampleExternal.storyboard */,
 				3E9C29A91869CAD700E7F5E5 /* Images.xcassets */,
 				3E9C29981869CAD700E7F5E5 /* Supporting Files */,
 			);
@@ -340,8 +339,8 @@
 				3E9C29AA1869CAD700E7F5E5 /* Images.xcassets in Resources */,
 				3EE3E69D186B2F9300427ECF /* icon.png in Resources */,
 				3E9BC24D186C15B6002B1FE3 /* icon-menu@2x.png in Resources */,
-				3E9BC255186C2992002B1FE3 /* Main~iPad.storyboard in Resources */,
 				3E59F22B186F038400AEFD6F /* simpleMenuButton.png in Resources */,
+				8BE1596218B42F28006187DB /* SampleExternal.storyboard in Resources */,
 				3E9BC24C186C15B6002B1FE3 /* icon-menu.png in Resources */,
 				3E59F22C186F038400AEFD6F /* simpleMenuButton@2x.png in Resources */,
 				3E9C299C1869CAD700E7F5E5 /* InfoPlist.strings in Resources */,
@@ -375,7 +374,6 @@
 				3E9C29E01869CE4300E7F5E5 /* LeftMenuVC.m in Sources */,
 				756D31DB18B2A069008E846B /* AMSlideMenuLeftTableViewController.m in Sources */,
 				3EE3E69A186B1F6100427ECF /* PushedVC.m in Sources */,
-				3E9C29E61869CE8200E7F5E5 /* RightMenuVC.m in Sources */,
 				756D31DE18B2A069008E846B /* AMSlideMenuRightTableViewController.m in Sources */,
 				756D31DC18B2A069008E846B /* AMSlideMenuMainViewController.m in Sources */,
 				3E9C299E1869CAD700E7F5E5 /* main.m in Sources */,
@@ -509,7 +507,7 @@
 				INFOPLIST_FILE = "AMSlideMenu/AMSlideMenu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -523,7 +521,7 @@
 				INFOPLIST_FILE = "AMSlideMenu/AMSlideMenu-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

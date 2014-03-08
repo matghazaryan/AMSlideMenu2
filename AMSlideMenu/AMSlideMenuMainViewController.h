@@ -132,6 +132,22 @@ typedef enum {
 - (NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath;
 
 /**
+ * Override this method to set which of
+ * indexPaths will be selected automatically on first time for right menu
+ * @param indexPath of left menu table
+ * @return storyboard identifier for input indexPath
+ */
+- (NSString *)storyboardIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath;
+
+/**
+ * Override this method to set which of
+ * indexPaths will be selected automatically on first time for right menu
+ * @param indexPath of left menu table
+ * @return storyboard identifier for input indexPath
+ */
+- (NSString *)storyboardIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath;
+
+/**
  * Override this method to configure slide layer. (e.g. for shadow)
  * @param layer of slider
  */

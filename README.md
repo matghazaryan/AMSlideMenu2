@@ -1,6 +1,27 @@
 AMSlideMenu  
 ===========
 
+### Notes
+This is Based on Artur Mkrtchyan codebase situated at:
+
+https://raw.github.com/arturdev/AMSlideMenu/
+
+Please access that version for full versatility 
+
+This version does not rely on Segues in order to load storyboards in separate files. 
+This is done to limit git problems when working with more than 1 person on an app. 
+This version also breaks ipad compatibilty.
+
+The goal of this fork is to have a version that is data driven and not dependent on a monolithic storyboard file. 
+
+Issues:
+
+Right Side Menu is Untested/Unsuported
+Sample App is no longer universal, but implementation to ipad is simple enough
+Set as iOS 7, older versions are not supported
+
+Non Storyboard App is Untouched
+
 Sliding Menu for iOS by <b> arturdev </b>.
 
 <img src="https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/demo.gif" width=320>

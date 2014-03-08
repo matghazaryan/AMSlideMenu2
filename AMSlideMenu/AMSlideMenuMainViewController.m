@@ -207,6 +207,17 @@ static NSMutableArray *allInstances;
     return @"";
 }
 
+- (NSString *)storyboardIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath
+{
+    return @"";
+}
+
+- (NSString *)storyboardIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath
+{
+    return @"";
+}
+
+
 - (void) configureSlideLayer:(CALayer *)layer
 {
     layer.shadowColor = [UIColor grayColor].CGColor;
