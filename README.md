@@ -62,8 +62,8 @@ Just follow this steps:<br>
 
 Thats it, you are done.
 
-USAGE WITHOUT STORYBOARDS
-========================
+USAGE WITHOUT STORYBOARDS (XIB)
+===============================
 First of all you must add following line in your *-Prefix.pch file
 <pre>
 #define AMSlideMenuWithoutStoryboards
@@ -71,8 +71,7 @@ First of all you must add following line in your *-Prefix.pch file
 
 For more info see demo project.
 
-Video tutorial coming soon.
-
+[![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/youtube.png)](https://www.youtube.com/watch?v=BgcRc7D3qJw)
 
 CUSTOMIZATION
 =============
