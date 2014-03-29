@@ -38,9 +38,15 @@
     [[self mainSlideMenu] fixStatusBarWithView:view];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[self mainSlideMenu] unfixStatusBarView];
+}
+
 - (void)dealloc
 {
-    [[self mainSlideMenu] unfixStatusBarView];
+
 }
 
 @end
