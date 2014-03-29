@@ -69,7 +69,7 @@ First of all you must add following line in your *-Prefix.pch file
 #define AMSlideMenuWithoutStoryboards
 </pre>
 
-For more info see demo project.
+For more info see demo project or this video tutorial.
 
 [![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/youtube.png)](https://www.youtube.com/watch?v=BgcRc7D3qJw)
 
