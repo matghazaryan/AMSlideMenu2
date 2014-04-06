@@ -91,7 +91,7 @@ You can easily customize slide menu by overriding needed methods in you MainVC.m
 - (CGFloat) panGestureWarkingAreaPercent;
 </pre>
 
-You cas use this methods in you MainVC.m if you want to open or close left or right menus programmatically:
+You can use this methods in your MainVC.m if you want to open or close left or right menus programmatically:
 <pre>
 - (void)openLeftMenu;
 - (void)openLeftMenuAnimated:(BOOL)animated;
