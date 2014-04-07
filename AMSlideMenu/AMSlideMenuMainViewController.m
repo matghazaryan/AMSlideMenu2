@@ -416,6 +416,9 @@ static NSMutableArray *allInstances;
         self.rightMenu.view.layer.opacity = kMenuLayerInitialOpacity;
     }
     
+    // Disabling scrollsToTop for menu's tableviews
+    self.leftMenu.tableView.scrollsToTop = NO;
+    self.rightMenu.tableView.scrollsToTop = NO;
 }
 
 /*----------------------------------------------------*/
