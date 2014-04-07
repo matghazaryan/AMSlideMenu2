@@ -54,7 +54,7 @@
     self.view.backgroundColor = self.myTableView.backgroundColor;
     [self.view addSubview:self.myTableView];    
     
-    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 20)];
+    UIView *statusBarView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAX(self.view.frame.size.width,self.view.frame.size.height), 20)];
     statusBarView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:statusBarView];
 }
