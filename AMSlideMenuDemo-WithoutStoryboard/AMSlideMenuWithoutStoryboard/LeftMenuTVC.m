@@ -53,29 +53,28 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UINavigationController *nvc;
+    UIViewController *rootVC;
     switch (indexPath.row) {
         case 0:
         {
-            FirstVC *firstVC = [[FirstVC alloc] initWithNibName:@"FirstVC" bundle:nil];
-            nvc = [[UINavigationController alloc] initWithRootViewController:firstVC];
+            rootVC = [[FirstVC alloc] initWithNibName:@"FirstVC" bundle:nil];
         }
             break;
         case 1:
         {
-            SecondVC *secondVC = [[SecondVC alloc] initWithNibName:@"SecondVC" bundle:nil];
-            nvc = [[UINavigationController alloc] initWithRootViewController:secondVC];
+            rootVC = [[SecondVC alloc] initWithNibName:@"SecondVC" bundle:nil];
         }
             break;
         case 2:
         {
-            ThirdVC *thirdVC = [[ThirdVC alloc] initWithNibName:@"ThirdVC" bundle:nil];
-            nvc = [[UINavigationController alloc] initWithRootViewController:thirdVC];
+            rootVC = [[ThirdVC alloc] initWithNibName:@"ThirdVC" bundle:nil];
         }
             break;
         
         default:
             break;
     }
+    nvc = [[UINavigationController alloc] initWithRootViewController:rootVC];
     
     [self openContentNavigationController:nvc];
 }

@@ -60,23 +60,22 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UINavigationController *nvc;
+    UIViewController *rootVC;
     switch (indexPath.row) {
         case 0:
         {
-            ForthVC *forthVC = [[ForthVC alloc] initWithNibName:@"ForthVC" bundle:nil];
-            nvc = [[UINavigationController alloc] initWithRootViewController:forthVC];
+            rootVC = [[ForthVC alloc] initWithNibName:@"ForthVC" bundle:nil];
         }
             break;
         case 1:
         {
-            FiveVC *fiveVC = [[FiveVC alloc] initWithNibName:@"FiveVC" bundle:nil];
-            nvc = [[UINavigationController alloc] initWithRootViewController:fiveVC];
+            rootVC = [[FiveVC alloc] initWithNibName:@"FiveVC" bundle:nil];
         }
             break;
         default:
             break;
     }
-    
+    nvc = [[UINavigationController alloc] initWithRootViewController:rootVC];
     [self openContentNavigationController:nvc];
 }
 
