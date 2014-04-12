@@ -25,7 +25,7 @@ Works for both <b>iPhone</b> and <b>iPad</b>.
 #### Podfile
 
 ```ruby
-pod "AMSlideMenu", "~> 1.5.2"
+pod "AMSlideMenu", "~> 1.5.3"
 ```
 
 
