@@ -22,8 +22,22 @@
     Method origMethod = class_getInstanceMethod([self class], NSSelectorFromString(@"dealloc"));
     Method newMethod = class_getInstanceMethod([self class], @selector(my_dealloc));
     method_exchangeImplementations(origMethod, newMethod);
+    
+    [self swizzleOriginalSelectorWithName:@"dealloc" toSelectorWithName:@"my_dealloc"];
+    [self swizzleOriginalSelectorWithName:@"viewWillAppear:" toSelectorWithName:@"my_viewWillAppear:"];
+    [self swizzleOriginalSelectorWithName:@"viewWillDisappear:" toSelectorWithName:@"my_viewWillDisappear:"];
 }
 
+
+#pragma mark - Swizzle Utils methods
++ (void)swizzleOriginalSelectorWithName:(NSString *)origName toSelectorWithName:(NSString *)swizzleName
+{
+    Method origMethod = class_getInstanceMethod([self class], NSSelectorFromString(origName));
+    Method newMethod = class_getInstanceMethod([self class], NSSelectorFromString(swizzleName));
+    method_exchangeImplementations(origMethod, newMethod);
+}
+
+#pragma marl -
 - (void)addLeftMenuButton
 {
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
@@ -98,13 +112,35 @@
 #pragma mark - Lifecycle -
 /*----------------------------------------------------*/
 
+#pragma marl - Swizzled Methods
+
 - (void)my_dealloc
 {
+    // Additional code Here
+    
+    // Call original dealloc method
+    [self my_dealloc];
+}
+
+- (void)my_viewWillAppear:(BOOL)animated
+{
+    // Additional code Here
+
+    // Call original viewWillAppear method
+    [self my_viewWillAppear:animated];
+}
+
+- (void)my_viewWillDisappear:(BOOL)animated
+{
+    // Additional code Here
+    
+    // Enabling pan gesture for left and right menus
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];
     mainVC.leftPanDisabled = NO;
     mainVC.rightPanDisabled = NO;
-    
-    [self my_dealloc];
+
+    // Call original viewWillDisappear method
+    [self my_viewWillDisappear:animated];
 }
 
 @end

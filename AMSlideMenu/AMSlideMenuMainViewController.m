@@ -35,6 +35,8 @@
 #define kMenuTransformScale CATransform3DMakeScale(0.9, 0.9, 0.9)
 #define kMenuLayerInitialOpacity 0.4f
 
+#define kAutoresizingMaskAll UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin
+
 typedef enum {
   AMSlidePanningStateStopped,
   AMSlidePanningStateLeft,
@@ -83,7 +85,6 @@ static NSMutableArray *allInstances;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceOrientationChangedNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
 
     [self setup];
-    
 }
 
 - (void)handleInterfaceOrientationChangedNotification:(NSNotification *)not
@@ -97,8 +98,7 @@ static NSMutableArray *allInstances;
         {
             self.overlayView.frame = CGRectMake(0, 0, self.currentActiveNVC.view.frame.size.width, self.currentActiveNVC.view.frame.size.height);
         }
-        
-        
+
         double delayInSeconds = 0.25f;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -277,6 +277,7 @@ static NSMutableArray *allInstances;
     }
     self.darknessView.layer.zPosition = 1;
     
+    self.darknessView.autoresizingMask = kAutoresizingMaskAll;
     [self.currentActiveNVC.view addSubview:self.darknessView];
 }
 
@@ -292,6 +293,7 @@ static NSMutableArray *allInstances;
     [self configureDarknessView];
 }
 
+#pragma mark - Gesture recognizer delegates
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if ([touch.view isKindOfClass:[UISlider class]]) {
         // prevent recognizing touches on the slider
@@ -300,6 +302,7 @@ static NSMutableArray *allInstances;
     return YES;
 }
 
+#pragma mark -
 - (void)setup
 {
     self.view.backgroundColor = [UIColor blackColor];
@@ -409,16 +412,21 @@ static NSMutableArray *allInstances;
     {
         self.leftMenu.view.layer.transform = kMenuTransformScale;
         self.leftMenu.view.layer.opacity = kMenuLayerInitialOpacity;
+        self.leftMenu.view.autoresizingMask = kAutoresizingMaskAll;
+        self.leftMenu.view.hidden = YES;
     }
     if (self.rightMenu && [self deepnessForRightMenu])
     {
         self.rightMenu.view.layer.transform = kMenuTransformScale;
         self.rightMenu.view.layer.opacity = kMenuLayerInitialOpacity;
+        self.rightMenu.view.autoresizingMask = kAutoresizingMaskAll;
+        self.rightMenu.view.hidden = YES;
     }
     
     // Disabling scrollsToTop for menu's tableviews
     self.leftMenu.tableView.scrollsToTop = NO;
     self.rightMenu.tableView.scrollsToTop = NO;
+
 }
 
 /*----------------------------------------------------*/
@@ -545,10 +553,14 @@ static NSMutableArray *allInstances;
         [self desableGestures];
         self.menuState = AMSlideMenuClosed;
         [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
-
+        
         if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(leftMenuDidClose)])
             [self.slideMenuDelegate leftMenuDidClose];
     }];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kMenuCloseAminationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.leftMenu.view.hidden = YES;
+    });
 }
 
 - (void)closeRightMenu
@@ -586,10 +598,13 @@ static NSMutableArray *allInstances;
         [self desableGestures];
         self.menuState = AMSlideMenuClosed;
         [self.currentActiveNVC.view addGestureRecognizer:self.panGesture];
-
+        
         if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(rightMenuDidClose)])
             [self.slideMenuDelegate rightMenuDidClose];
     }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kMenuCloseAminationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.leftMenu.view.hidden = YES;
+    });
 }
 
 - (void)closeMenu
@@ -982,10 +997,6 @@ static NSMutableArray *allInstances;
                 {
                     [self openLeftMenu];
                 }
-//                else if (panningView.frame.origin.x > ([self leftMenuWidth] / 2.0f))
-//                {
-//                    [self openLeftMenu];
-//                }
                 else if ((panningView.frame.origin.x + translation.x) < [self leftMenuWidth] && (panningView.frame.origin.x + translation.x) > 0)
                 {
                     [panningView setCenter:CGPointMake([panningView center].x + translation.x, [panningView center].y)];
@@ -999,10 +1010,6 @@ static NSMutableArray *allInstances;
                 {
                     [self openRightMenu];
                 }
-//                else if (self.view.frame.size.width - (panningView.frame.origin.x + panningView.frame.size.width) > ([self rightMenuWidth] / 2.0f))
-//                {
-//                    [self openRightMenu];
-//                }
                 else if (self.view.frame.size.width - (panningView.frame.origin.x + panningView.frame.size.width + translation.x) <= [self rightMenuWidth])
                 {
                     if (panningView.frame.origin.x + translation.x <= 0)

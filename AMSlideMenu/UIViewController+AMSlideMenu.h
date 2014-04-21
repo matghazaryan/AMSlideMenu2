@@ -29,6 +29,12 @@
 
 @interface UIViewController (AMSlideMenu)
 
+/**
+ * Getting current vc's  Main Slideing View Controller
+ */
+- (AMSlideMenuMainViewController *)mainSlideMenu;
+
+
 /** 
  * Adds left menu top button
  */
@@ -55,33 +61,27 @@
 //
 
 /**
- * Disables Left menu open functional
+ * Disables Left menu open functionality
  * by Pan gesture recognizer
  */
 - (void)disableSlidePanGestureForLeftMenu;
 
 /**
- * Disables Right menu open functional
+ * Disables Right menu open functionality
  * by Pan gesture recognizer
  */
 - (void)disableSlidePanGestureForRightMenu;
 
 /**
- * Enables Left menu open functional
+ * Enables Left menu open functionality
  * by Pan gesture recognizer
  */
 - (void)enableSlidePanGestureForLeftMenu;
 
 /**
- * Disables Right menu open functional
+ * Disables Right menu open functionality
  * by Pan gesture recognizer
  */
 - (void)enableSlidePanGestureForRightMenu;
-
-
-/**
- * Getting current vc's  Main Slideing View Controller
- */
-- (AMSlideMenuMainViewController *)mainSlideMenu;
 
 @end
