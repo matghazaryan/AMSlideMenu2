@@ -43,7 +43,10 @@
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     }
     
-    [self setFixedStatusBar];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        // The device is an iPhone or iPod touch.
+        [self setFixedStatusBar];
+    }
 }
 
 - (void)setFixedStatusBar
