@@ -50,6 +50,7 @@ typedef enum {
     NSDate* panningPreviousEventDate;
     CGFloat panningXSpeed;  // panning speed expressed in px/ms
     bool panStarted;
+    UIInterfaceOrientation initialOrientation;
 }
 @property (strong, nonatomic) AMSlideMenuLeftMenuSegue *leftSegue;
 @property (strong, nonatomic) AMSlideMenuRightMenuSegue *rightSegue;
@@ -83,7 +84,7 @@ static NSMutableArray *allInstances;
     [allInstances addObject:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceOrientationChangedNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
-
+    initialOrientation = [UIApplication sharedApplication].statusBarOrientation;
     [self setup];
 }
 
@@ -715,7 +716,11 @@ static NSMutableArray *allInstances;
         {
             if (!UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
                 CGRect frame = self.currentActiveNVC.view.frame;
-                frame.origin.y = -20;
+                
+                if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad || UIDeviceOrientationIsPortrait(initialOrientation)) {
+                    frame.origin.y = -20;
+                }
+                
                 self.currentActiveNVC.view.frame = frame;
             }
         }
