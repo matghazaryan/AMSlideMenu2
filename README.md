@@ -56,9 +56,18 @@ Just follow this steps:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you want to use dynamic cells , then you have to perform segues in 
 -tableView:didSelectRowAtIndexPath: method yourself.<br>
 
-6.. In MainVC.m override this methods and return segue identifiers that you setted in previous step: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-(NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath; <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-(NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath; <br>
+6.. In MainVC.m override these methods and return segue identifiers that you setted in previous step: <br>
+```Obj-C
+-(NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath;
+-(NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath;
+```
+
+If you want to use multiple storyboards, or just want to use storyboard ids instead of segues, then override these methods:<br>
+```Obj-C
+-(UINavigationController *)navigationControllerForIndexPathInLeftMenu:(NSIndexPath *)indexPath;
+-(UINavigationController *)navigationControllerForIndexPathInRightMenu:(NSIndexPath *)indexPath;
+```
+
 
 Thats it, you are done.
 
