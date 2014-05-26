@@ -26,8 +26,9 @@
 
 #import "AMSlideMenuLeftMenuSegue.h"
 
-#import "AMSlideMenuMainViewController.h"
+#import "AMSlideMenuContentSegue.h"
 #import "AMSlideMenuLeftTableViewController.h"
+#import "AMSlideMenuMainViewController.h"
 
 @implementation AMSlideMenuLeftMenuSegue
 
@@ -59,8 +60,14 @@
     NSIndexPath *initialIndexPath = [mainVC initialIndexPathForLeftMenu];
     
 #ifndef AMSlideMenuWithoutStoryboards
-    NSString *segueIdentifier = [mainVC segueIdentifierForIndexPathInLeftMenu:initialIndexPath];
-    [leftMenu performSegueWithIdentifier:segueIdentifier sender:self];
+    if ([mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
+        UINavigationController *navController = [mainVC navigationControllerForIndexPathInLeftMenu:initialIndexPath];
+        AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:leftMenu destination:navController];
+        [segue perform];
+    } else {
+        NSString *segueIdentifier = [mainVC segueIdentifierForIndexPathInLeftMenu:initialIndexPath];
+        [leftMenu performSegueWithIdentifier:segueIdentifier sender:self];
+    }
 #else
     [leftMenu tableView:leftMenu.tableView didSelectRowAtIndexPath:initialIndexPath];
 #endif

@@ -62,10 +62,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *segueIdentifier = [self.mainVC segueIdentifierForIndexPathInLeftMenu:indexPath];
-    if (segueIdentifier && segueIdentifier.length > 0)
-    {
-        [self performSegueWithIdentifier:segueIdentifier sender:self];
+    if ([self.mainVC respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
+        UINavigationController *navController = [self.mainVC navigationControllerForIndexPathInLeftMenu:indexPath];
+        AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:self destination:navController];
+        [segue perform];
+    } else {
+        NSString *segueIdentifier = [self.mainVC segueIdentifierForIndexPathInLeftMenu:indexPath];
+        if (segueIdentifier && segueIdentifier.length > 0)
+        {
+            [self performSegueWithIdentifier:segueIdentifier sender:self];
+        }
     }
 }
 

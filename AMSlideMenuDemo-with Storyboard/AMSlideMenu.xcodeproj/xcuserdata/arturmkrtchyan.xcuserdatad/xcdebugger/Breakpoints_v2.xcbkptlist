@@ -20,28 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AMSlideMenu/MainVC.m"
-            timestampString = "412518669.364996"
+            timestampString = "422784149.182478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "-deepnessForLeftMenu"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AMSlideMenu/AMSlideMenu/AMSlideMenuMainViewController.m"
-            timestampString = "412517012.378879"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "399"
-            endingLineNumber = "399"
-            landmarkName = "-closeLeftMenuAnimated:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

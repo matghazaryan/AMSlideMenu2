@@ -25,6 +25,8 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "AMSlideMenuMainViewController.h"
+
+#import "AMSlideMenuContentSegue.h"
 #import "AMSlideMenuLeftMenuSegue.h"
 #import "AMSlideMenuRightMenuSegue.h"
 
@@ -769,19 +771,32 @@ static NSMutableArray *allInstances;
         if (!self.leftMenu)
             return;
         
-        NSString *identifier = [self segueIdentifierForIndexPathInLeftMenu:indexPath];
         [self.leftMenu.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-        [self.leftMenu performSegueWithIdentifier:identifier sender:self.leftMenu];
+        
+        if ([self respondsToSelector:@selector(navigationControllerForIndexPathInLeftMenu:)]) {
+            UINavigationController *navController = [self navigationControllerForIndexPathInLeftMenu:indexPath];
+            AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:self.leftMenu destination:navController];
+            [segue perform];
+        } else {
+            NSString *identifier = [self segueIdentifierForIndexPathInLeftMenu:indexPath];
+            [self.leftMenu performSegueWithIdentifier:identifier sender:self.leftMenu];
+        }
     }
     else if (menu == AMSlideMenuRight)
     {
         if (!self.rightMenu)
             return;
         
-        NSString *identifier = [self segueIdentifierForIndexPathInRightMenu:indexPath];
-        
         [self.rightMenu.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
-        [self.rightMenu performSegueWithIdentifier:identifier sender:self.rightMenu];
+        
+        if ([self respondsToSelector:@selector(navigationControllerForIndexPathInRightMenu:)]) {
+            UINavigationController *navController = [self navigationControllerForIndexPathInRightMenu:indexPath];
+            AMSlideMenuContentSegue *segue = [[AMSlideMenuContentSegue alloc] initWithIdentifier:@"ContentSugue" source:self.rightMenu destination:navController];
+            [segue perform];
+        } else {
+            NSString *identifier = [self segueIdentifierForIndexPathInRightMenu:indexPath];
+            [self.rightMenu performSegueWithIdentifier:identifier sender:self.rightMenu];
+        }
     }
 }
 

@@ -57,6 +57,33 @@
     return identifier;
 }
 
+/**
+ * NOTE! If you override this method, then segueIdentifierForIndexPathInLeftMenu will be ignored
+ * Return instantiated navigation controller that will opened
+ * when cell at indexPath will be selected from left menu
+ * @param indexPath of left menu table
+ * @return UINavigationController instance for input indexPath
+ */
+/*
+- (UINavigationController *)navigationControllerForIndexPathInLeftMenu:(NSIndexPath *)indexPath
+{
+    NSString *storyboardId = @"";
+    
+    switch (indexPath.row) {
+        case 0:
+            storyboardId = @"FirstNC";
+            break;
+        case 1:
+            storyboardId = @"SecondNC";
+            break;
+    }
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UINavigationController *nc = [storyboard instantiateViewControllerWithIdentifier:storyboardId];
+    return nc;
+}
+*/
+
 - (NSString *)segueIdentifierForIndexPathInRightMenu:(NSIndexPath *)indexPath
 {
     NSString *identifier = @"";

@@ -45,7 +45,31 @@ typedef enum {
     AMSlideMenuRightOpened,
 } AMSlideMenuState;
 
-@interface AMSlideMenuMainViewController : UIViewController
+@protocol AMSlideMenuMultipleStoryboarding <NSObject>
+
+@optional
+/**
+ * Override this method and return instantiated navigation controller that will opened
+ * when cell at indexPath will be selected from left menu
+ * NOTE! If you override this method, then segueIdentifierForIndexPathInLeftMenu will be ignored
+ * @param indexPath of left menu table
+ * @return UINavigationController instance for input indexPath
+ */
+- (UINavigationController *)navigationControllerForIndexPathInLeftMenu:(NSIndexPath *)indexPath;
+
+/**
+ * Override this method and return instantiated navigation controller that will opened
+ * when cell at indexPath will be selected from left menu
+ * NOTE! If you override this method, then segueIdentifierForIndexPathInRightMenu will be ignored
+ * @param indexPath of right menu table
+ * @return UINavigationController instance for input indexPath
+ */
+- (UINavigationController *)navigationControllerForIndexPathInRightMenu:(NSIndexPath *)indexPath;
+
+
+@end
+
+@interface AMSlideMenuMainViewController : UIViewController <AMSlideMenuMultipleStoryboarding>
 
 #pragma mark - Properties
 
@@ -116,16 +140,16 @@ typedef enum {
 - (NSIndexPath *)initialIndexPathForRightMenu;
 
 /**
- * Override this method to set which of 
- * indexPaths will be selected automatically on first time for right menu
+ * Override this method and return segue identifier that will be performed
+ * when cell at indexPath will be selected from left menu
  * @param indexPath of left menu table
  * @return Segue identifier for input indexPath
  */
 - (NSString *)segueIdentifierForIndexPathInLeftMenu:(NSIndexPath *)indexPath;
 
 /**
- * Override this method to set which 
- * of indexPaths will be selected automatically on first time for right menu
+ * Override this method and return segue identifier that will be performed
+ * when cell at indexPath will be selected from right menu
  * @param indexPath of right menu table
  * @return Segue identifier for input indexPath
  */
