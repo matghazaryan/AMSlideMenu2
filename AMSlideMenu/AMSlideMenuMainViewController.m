@@ -31,8 +31,6 @@
 #import "AMSlideMenuRightMenuSegue.h"
 
 #define kPanMinTranslationX 15.0f
-#define kMenuOpenAminationDuration 0.35f
-#define kMenuCloseAminationDuration 0.35f
 
 #define kMenuTransformScale CATransform3DMakeScale(0.9, 0.9, 0.9)
 #define kMenuLayerInitialOpacity 0.4f
@@ -173,6 +171,16 @@ static NSMutableArray *allInstances;
 - (CGFloat)rightMenuWidth
 {
     return 250;
+}
+
+- (CGFloat) openAnimationDuration
+{
+    return 0.35f;
+}
+
+- (CGFloat) closeAnimationDuration
+{
+    return 0.35f;
 }
 
 - (void)configureLeftMenuButton:(UIButton *)button
@@ -487,7 +495,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = [self leftMenuWidth];
     
-    [UIView animateWithDuration: animated ? kMenuOpenAminationDuration : 0 animations:^{
+    [UIView animateWithDuration: animated ? self.openAnimationDuration : 0 animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForLeftMenu])
@@ -530,7 +538,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = -1 *[self rightMenuWidth];
     
-    [UIView animateWithDuration:animated ? kMenuOpenAminationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.openAnimationDuration : 0 animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForRightMenu])
@@ -568,7 +576,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
 
-    [UIView animateWithDuration:animated ? kMenuCloseAminationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForLeftMenu])
@@ -593,7 +601,7 @@ static NSMutableArray *allInstances;
             [self.slideMenuDelegate leftMenuDidClose];
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kMenuCloseAminationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.closeAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.leftMenu.view.hidden = YES;
     });
 }
@@ -611,7 +619,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
     
-    [UIView animateWithDuration:animated ? kMenuCloseAminationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 animations:^{
         self.currentActiveNVC.view.frame = frame;
 
         if ([self deepnessForRightMenu])
@@ -637,7 +645,7 @@ static NSMutableArray *allInstances;
         if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(rightMenuDidClose)])
             [self.slideMenuDelegate rightMenuDidClose];
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kMenuCloseAminationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.closeAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.leftMenu.view.hidden = YES;
     });
 }
