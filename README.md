@@ -129,7 +129,7 @@ Where self is your pushed VC.
 
 <br>
 If you want to get menu's open/close callbacks, then set MainVC's delegate property,
-and implement protocol named 'AMSlideMenuProtocols'.
+and implement protocol named 'AMSlideMenuDelegate' which declared in 'AMSlideMenuProtocols.h'.
 <pre>
 @optional
 - (void)leftMenuWillOpen;
