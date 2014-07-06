@@ -310,45 +310,6 @@ static NSMutableArray *allInstances;
         // prevent recognizing touches on the slider
         return NO;
     }
-    
-    return YES;
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    CGPoint velocity = [self.panGesture velocityInView:self.panGesture.view];
-    BOOL isHorizontalGesture = fabs(velocity.y) < fabs(velocity.x);
-    
-    return isHorizontalGesture;
-}
-
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    CGPoint velocity = [self.panGesture velocityInView:self.panGesture.view];
-    BOOL isHorizontalGesture = fabs(velocity.y) < fabs(velocity.x);
-    
-    if ([otherGestureRecognizer.view isKindOfClass:[UITableView class]]) {
-        if (isHorizontalGesture) {
-            BOOL directionIsLeft = velocity.x < 0;
-            if (directionIsLeft) {
-                if (self.rightMenu) {
-                    return NO;
-                }
-            } else {
-                //if direction is to right
-                UITableView *tableView = (UITableView *)otherGestureRecognizer.view;
-                CGPoint point = [otherGestureRecognizer locationInView:tableView];
-                NSIndexPath *indexPath = [tableView indexPathForRowAtPoint:point];
-                UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-                if (cell.isEditing) {
-                    self.panGesture.enabled = NO;
-                    self.panGesture.enabled = YES;
-                    return YES;
-                }
-            }
-        }
-    }
-    
     return YES;
 }
 
