@@ -4,7 +4,6 @@ AMSlideMenu
 Sliding Menu for iOS by <b> arturdev </b>.
 
 <img src="https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/demo.gif" width=320>
-
 This is a simple library to create sliding menus that can be used in storyboards/xibs and supports static cells.
 
 With this library you can create 3 types of sliding menus: <br>
@@ -178,6 +177,10 @@ SCREENSHOTS
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenShotLeftMenu.png" width="320" height="580"><br>
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshowRightMenu.png" width="320" height="580"><br>
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshotBothMenu.png" width="320" height="580">
+
+<br>
+Works great with UITableView "Swipe to delete" funtionality
+<img src="https://raw.githubusercontent.com/SocialObjects-Software/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/CellEditDemo.gif" width=320>
 
 Ideas
 ===========
