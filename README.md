@@ -179,7 +179,7 @@ SCREENSHOTS
 <img src="https://raw.github.com/arturdev/AMSlideMenu/5c5af35e78a34275e1a3665b37b75ecd715b5d3c/AMSlideMenu/ScreenshotBothMenu.png" width="320" height="580">
 
 <br>
-Works great with UITableView "Swipe to delete" funtionality
+Works great with UITableView "Swipe to delete" funtionality<br>
 <img src="https://raw.githubusercontent.com/SocialObjects-Software/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/CellEditDemo.gif" width=320>
 
 Ideas
