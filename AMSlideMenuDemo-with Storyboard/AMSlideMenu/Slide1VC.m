@@ -54,9 +54,5 @@
     [[self mainSlideMenu] unfixStatusBarView];
 }
 
-- (void)dealloc
-{
-
-}
 
 @end

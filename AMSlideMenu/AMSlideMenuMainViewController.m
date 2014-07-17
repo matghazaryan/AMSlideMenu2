@@ -332,6 +332,8 @@ static NSMutableArray *allInstances;
             if (directionIsLeft) {
                 if (self.rightMenu) {
                     return NO;
+                } else {
+                    return YES;
                 }
             } else {
                 //if direction is to right
@@ -346,9 +348,11 @@ static NSMutableArray *allInstances;
                 }
             }
         }
+    } else if ([otherGestureRecognizer.view isKindOfClass:NSClassFromString(@"UITableViewCellScrollView")]) {
+        return YES;
     }
     
-    return YES;
+    return NO;
 }
 
 #pragma mark -
