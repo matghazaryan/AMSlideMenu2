@@ -3,7 +3,7 @@ AMSlideMenu
 
 Sliding Menu for iOS by <b> arturdev </b>.
 
-<img src="https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/demo.gif" width=320>
+<img src="https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/demo.gif" width=320><br>
 This is a simple library to create sliding menus that can be used in storyboards/xibs and supports static cells.
 
 With this library you can create 3 types of sliding menus: <br>
