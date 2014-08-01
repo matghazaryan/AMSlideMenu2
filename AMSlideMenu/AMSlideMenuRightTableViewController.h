@@ -30,7 +30,7 @@
 
 @interface AMSlideMenuRightTableViewController : UITableViewController
 
-@property (strong, nonatomic) AMSlideMenuMainViewController *mainVC;
+@property (weak, nonatomic) AMSlideMenuMainViewController *mainVC;
 
 - (void)openContentNavigationController:(UINavigationController *)nvc;
 

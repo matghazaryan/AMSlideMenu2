@@ -30,7 +30,7 @@
 
 @interface AMSlideMenuLeftTableViewController : UITableViewController
 
-@property (strong, nonatomic) AMSlideMenuMainViewController *mainVC;
+@property (weak, nonatomic) AMSlideMenuMainViewController *mainVC;
 
 // Only afor non storyboard use
 - (void)openContentNavigationController:(UINavigationController *)nvc;
