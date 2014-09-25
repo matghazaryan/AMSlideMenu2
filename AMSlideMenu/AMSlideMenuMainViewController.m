@@ -81,7 +81,10 @@ static NSMutableArray *allInstances;
     {
         allInstances = [NSMutableArray array];
     }
-    [allInstances addObject:self];
+    
+    NSValue *value = [NSValue valueWithNonretainedObject:self];
+    [allInstances addObject:value];
+//    [allInstances addObject:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceOrientationChangedNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
     initialOrientation = [UIApplication sharedApplication].statusBarOrientation;
@@ -132,6 +135,15 @@ static NSMutableArray *allInstances;
 
 - (void)dealloc
 {
+    NSMutableArray *arr = [allInstances mutableCopy];
+    for (NSValue *value in arr)
+    {
+        AMSlideMenuMainViewController *mainVC = [value nonretainedObjectValue];
+        if (mainVC == self) {
+            [allInstances removeObject:value];
+        }
+    }
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -146,11 +158,13 @@ static NSMutableArray *allInstances;
 
 + (AMSlideMenuMainViewController *)getInstanceForVC:(UIViewController *)vc
 {
+
     if (allInstances.count == 1)
-        return allInstances[0];
+        return [allInstances[0] nonretainedObjectValue];
     
-    for (AMSlideMenuMainViewController *mainVC in allInstances)
+    for (NSValue *value in allInstances)
     {
+        AMSlideMenuMainViewController *mainVC = [value nonretainedObjectValue];
         if (mainVC.currentActiveNVC == vc.navigationController || mainVC.currentActiveNVC == vc)
         {
             return mainVC;
