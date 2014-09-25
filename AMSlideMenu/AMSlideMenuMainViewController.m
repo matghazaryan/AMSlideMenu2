@@ -773,8 +773,9 @@ static NSMutableArray *allInstances;
     self.currentActiveNVC = nvc;
     
     [self.view addSubview:nvc.view];
+    [self addChildViewController:nvc];
     [self configureDarknessView];
-
+    
     if (![UIApplication sharedApplication].statusBarHidden)
     {
         // Configuring for iOS 6.x
