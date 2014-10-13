@@ -197,6 +197,16 @@ static NSMutableArray *allInstances;
     return 0.35f;
 }
 
+- (UIViewAnimationOptions) openAnimationCurve
+{
+    return UIViewAnimationOptionCurveLinear;
+}
+
+- (UIViewAnimationOptions) closeAnimationCurve
+{
+    return UIViewAnimationOptionCurveLinear;
+}
+
 - (void)configureLeftMenuButton:(UIButton *)button
 {
     
@@ -551,7 +561,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = [self leftMenuWidth];
     
-    [UIView animateWithDuration: animated ? self.openAnimationDuration : 0 animations:^{
+    [UIView animateWithDuration: animated ? self.openAnimationDuration : 0 delay:0.0 options:self.openAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForLeftMenu])
@@ -594,7 +604,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = -1 *[self rightMenuWidth];
     
-    [UIView animateWithDuration:animated ? self.openAnimationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.openAnimationDuration : 0 delay:0.0 options:self.openAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForRightMenu])
@@ -632,7 +642,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
 
-    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 delay:0 options:self.closeAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForLeftMenu])
@@ -675,7 +685,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
     
-    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 delay:0 options:self.closeAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
 
         if ([self deepnessForRightMenu])

@@ -131,6 +131,18 @@ typedef enum {
 - (CGFloat) closeAnimationDuration;
 
 /**
+ * Override this metod to change the animation easing of opening the menu
+ * @return Animation easing (Default will return UIViewAnimationOptionCurveLinear
+ */
+- (UIViewAnimationOptions) openAnimationCurve;
+
+/**
+ * Override this metod to change the animation easing of closing the menu
+ * @return Animation easing (Default will return UIViewAnimationOptionCurveLinear
+ */
+- (UIViewAnimationOptions) closeAnimationCurve;
+
+/**
  * Override this method to select whether of
  * menues is the primary and which's root vc will be presented in first time.
  * @return Type of primary menu (Default will return AMPrimaryMenuLeft)
