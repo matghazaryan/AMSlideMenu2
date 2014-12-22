@@ -354,6 +354,8 @@ static NSMutableArray *allInstances;
         if (isHorizontalGesture) {
             BOOL directionIsLeft = velocity.x < 0;
             if (directionIsLeft) {
+                self.panGesture.enabled = NO;
+                self.panGesture.enabled = YES;
                 if (self.rightMenu) {
                     return NO;
                 } else {
