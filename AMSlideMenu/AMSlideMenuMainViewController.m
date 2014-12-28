@@ -334,6 +334,30 @@ static NSMutableArray *allInstances;
         // prevent recognizing touches on the slider
         return NO;
     }
+    
+    if (self.leftPanDisabled && self.rightPanDisabled) {
+        return NO;
+    }
+    
+    static CGPoint panStartPosition = (CGPoint){0,0};
+    
+    UIView* panningView = touch.view;
+    if (self.menuState != AMSlideMenuClosed) {
+        panningView = panningView.superview;
+    }
+    
+    if ([touch phase] == UITouchPhaseBegan) {
+        panStartPosition = [touch locationInView:panningView];
+        panStarted = YES;
+    } else {
+        return YES;
+    }
+    
+    CGFloat actualWidth = panningView.frame.size.width * ([self panGestureWarkingAreaPercent] / 100.0f);
+    if (panStartPosition.x > actualWidth && panStartPosition.x < panningView.frame.size.width - actualWidth && self.menuState == AMSlideMenuClosed) {
+        return NO;
+    }
+    
     return YES;
 }
 
@@ -964,11 +988,6 @@ static NSMutableArray *allInstances;
 - (void)handlePanGesture:(UIPanGestureRecognizer *)gesture
 {
     static CGPoint panStartPosition = (CGPoint){0,0};
-    
-    if (self.leftPanDisabled && self.rightPanDisabled)
-    {
-        return;
-    }
     
     UIView* panningView = gesture.view;
     if (self.menuState != AMSlideMenuClosed)
