@@ -40,6 +40,7 @@
         
         // Making view with same color that navigation bar
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
+        view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         view.backgroundColor = [UIColor colorWithHex:@"#365491" alpha:1];
         
         // Replace status bar view with created view and do magic :)
@@ -53,9 +54,5 @@
     [[self mainSlideMenu] unfixStatusBarView];
 }
 
-- (void)dealloc
-{
-
-}
 
 @end

@@ -138,6 +138,14 @@
     layer.shadowPath =[UIBezierPath bezierPathWithRect:self.view.layer.bounds].CGPath;
 }
 
+- (UIViewAnimationOptions) openAnimationCurve {
+    return UIViewAnimationOptionCurveEaseOut;
+}
+
+- (UIViewAnimationOptions) closeAnimationCurve {
+    return UIViewAnimationOptionCurveEaseOut;
+}
+
 - (AMPrimaryMenu)primaryMenu
 {
     return AMPrimaryMenuLeft;

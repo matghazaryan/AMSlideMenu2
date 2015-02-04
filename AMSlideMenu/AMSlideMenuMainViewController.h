@@ -119,21 +119,45 @@ typedef enum {
 - (CGFloat)rightMenuWidth;
 
 /**
- * Override this method to select whether of 
+ * Override this method to change the animation duration of opening the menu
+ * @return Open animation duration (Default will return 0.35f
+ */
+- (CGFloat) openAnimationDuration;
+
+/**
+ * Override this method to change the animation duration of closing the menu
+ * @return Closing animation duration (Default will return 0.35f
+ */
+- (CGFloat) closeAnimationDuration;
+
+/**
+ * Override this metod to change the animation easing of opening the menu
+ * @return Animation easing (Default will return UIViewAnimationOptionCurveLinear
+ */
+- (UIViewAnimationOptions) openAnimationCurve;
+
+/**
+ * Override this metod to change the animation easing of closing the menu
+ * @return Animation easing (Default will return UIViewAnimationOptionCurveLinear
+ */
+- (UIViewAnimationOptions) closeAnimationCurve;
+
+/**
+ * Override this method to select whether of
  * menues is the primary and which's root vc will be presented in first time.
  * @return Type of primary menu (Default will return AMPrimaryMenuLeft)
  */
 - (AMPrimaryMenu)primaryMenu;
 
 /**
- * Override this method to set which of indexPaths 
+ * Override this method to set which of indexPaths
  * will be selected automatically on first time for left menu
  * @return Default will return (0, 0)
  */
 - (NSIndexPath *)initialIndexPathForLeftMenu;
 
 /**
- * Override this method to set which of 
+ * Override this method to set which of
  * indexPaths will be selected automatically on first time for right menu
  * @return Default will return (0, 0)
  */

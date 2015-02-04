@@ -31,8 +31,6 @@
 #import "AMSlideMenuRightMenuSegue.h"
 
 #define kPanMinTranslationX 15.0f
-#define kMenuOpenAminationDuration 0.35f
-#define kMenuCloseAminationDuration 0.35f
 
 #define kMenuTransformScale CATransform3DMakeScale(0.9, 0.9, 0.9)
 #define kMenuLayerInitialOpacity 0.4f
@@ -83,7 +81,10 @@ static NSMutableArray *allInstances;
     {
         allInstances = [NSMutableArray array];
     }
-    [allInstances addObject:self];
+    
+    NSValue *value = [NSValue valueWithNonretainedObject:self];
+    [allInstances addObject:value];
+//    [allInstances addObject:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleInterfaceOrientationChangedNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
     initialOrientation = [UIApplication sharedApplication].statusBarOrientation;
@@ -134,6 +135,15 @@ static NSMutableArray *allInstances;
 
 - (void)dealloc
 {
+    NSMutableArray *arr = [allInstances mutableCopy];
+    for (NSValue *value in arr)
+    {
+        AMSlideMenuMainViewController *mainVC = [value nonretainedObjectValue];
+        if (mainVC == self) {
+            [allInstances removeObject:value];
+        }
+    }
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -148,11 +158,13 @@ static NSMutableArray *allInstances;
 
 + (AMSlideMenuMainViewController *)getInstanceForVC:(UIViewController *)vc
 {
+
     if (allInstances.count == 1)
-        return allInstances[0];
+        return [allInstances[0] nonretainedObjectValue];
     
-    for (AMSlideMenuMainViewController *mainVC in allInstances)
+    for (NSValue *value in allInstances)
     {
+        AMSlideMenuMainViewController *mainVC = [value nonretainedObjectValue];
         if (mainVC.currentActiveNVC == vc.navigationController || mainVC.currentActiveNVC == vc)
         {
             return mainVC;
@@ -173,6 +185,26 @@ static NSMutableArray *allInstances;
 - (CGFloat)rightMenuWidth
 {
     return 250;
+}
+
+- (CGFloat) openAnimationDuration
+{
+    return 0.35f;
+}
+
+- (CGFloat) closeAnimationDuration
+{
+    return 0.35f;
+}
+
+- (UIViewAnimationOptions) openAnimationCurve
+{
+    return UIViewAnimationOptionCurveLinear;
+}
+
+- (UIViewAnimationOptions) closeAnimationCurve
+{
+    return UIViewAnimationOptionCurveLinear;
 }
 
 - (void)configureLeftMenuButton:(UIButton *)button
@@ -303,6 +335,50 @@ static NSMutableArray *allInstances;
         return NO;
     }
     return YES;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    CGPoint velocity = [self.panGesture velocityInView:self.panGesture.view];
+    BOOL isHorizontalGesture = fabs(velocity.y) < fabs(velocity.x);
+    
+    return isHorizontalGesture;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    CGPoint velocity = [self.panGesture velocityInView:self.panGesture.view];
+    BOOL isHorizontalGesture = fabs(velocity.y) < fabs(velocity.x);
+    
+    if ([otherGestureRecognizer.view isKindOfClass:[UITableView class]]) {
+        if (isHorizontalGesture) {
+            BOOL directionIsLeft = velocity.x < 0;
+            if (directionIsLeft) {
+                self.panGesture.enabled = NO;
+                self.panGesture.enabled = YES;
+                if (self.rightMenu) {
+                    return NO;
+                } else {
+                    return YES;
+                }
+            } else {
+                //if direction is to right
+                UITableView *tableView = (UITableView *)otherGestureRecognizer.view;
+                CGPoint point = [otherGestureRecognizer locationInView:tableView];
+                NSIndexPath *indexPath = [tableView indexPathForRowAtPoint:point];
+                UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+                if (cell.isEditing) {
+                    self.panGesture.enabled = NO;
+                    self.panGesture.enabled = YES;
+                    return YES;
+                }
+            }
+        }
+    } else if ([otherGestureRecognizer.view isKindOfClass:NSClassFromString(@"UITableViewCellScrollView")]) {
+        return YES;
+    }
+    
+    return NO;
 }
 
 #pragma mark -
@@ -487,7 +563,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = [self leftMenuWidth];
     
-    [UIView animateWithDuration: animated ? kMenuOpenAminationDuration : 0 animations:^{
+    [UIView animateWithDuration: animated ? self.openAnimationDuration : 0 delay:0.0 options:self.openAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForLeftMenu])
@@ -530,7 +606,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = -1 *[self rightMenuWidth];
     
-    [UIView animateWithDuration:animated ? kMenuOpenAminationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.openAnimationDuration : 0 delay:0.0 options:self.openAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForRightMenu])
@@ -568,7 +644,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
 
-    [UIView animateWithDuration:animated ? kMenuCloseAminationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 delay:0 options:self.closeAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
         
         if ([self deepnessForLeftMenu])
@@ -593,7 +669,7 @@ static NSMutableArray *allInstances;
             [self.slideMenuDelegate leftMenuDidClose];
     }];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kMenuCloseAminationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.closeAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.leftMenu.view.hidden = YES;
     });
 }
@@ -611,7 +687,7 @@ static NSMutableArray *allInstances;
     CGRect frame = self.currentActiveNVC.view.frame;
     frame.origin.x = 0;
     
-    [UIView animateWithDuration:animated ? kMenuCloseAminationDuration : 0 animations:^{
+    [UIView animateWithDuration:animated ? self.closeAnimationDuration : 0 delay:0 options:self.closeAnimationCurve animations:^{
         self.currentActiveNVC.view.frame = frame;
 
         if ([self deepnessForRightMenu])
@@ -637,7 +713,7 @@ static NSMutableArray *allInstances;
         if (self.slideMenuDelegate && [self.slideMenuDelegate respondsToSelector:@selector(rightMenuDidClose)])
             [self.slideMenuDelegate rightMenuDidClose];
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kMenuCloseAminationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.closeAnimationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.leftMenu.view.hidden = YES;
     });
 }
@@ -709,8 +785,9 @@ static NSMutableArray *allInstances;
     self.currentActiveNVC = nvc;
     
     [self.view addSubview:nvc.view];
+    [self addChildViewController:nvc];
     [self configureDarknessView];
-
+    
     if (![UIApplication sharedApplication].statusBarHidden)
     {
         // Configuring for iOS 6.x
@@ -910,7 +987,7 @@ static NSMutableArray *allInstances;
     {
         if (self.menuState != AMSlideMenuClosed)
         {
-            if (self.menuState == AMSlidePanningStateLeft)
+            if (self.menuState == AMSlideMenuLeftOpened)
             {
                 if (panningView.frame.origin.x < ([self leftMenuWidth] / 2.0f))
                 {
@@ -921,7 +998,7 @@ static NSMutableArray *allInstances;
                     [self openLeftMenu];
                 }
             }
-            else if (self.menuState == AMSlidePanningStateRight)
+            else if (self.menuState == AMSlideMenuRightOpened)
             {
                 if (self.view.frame.size.width - (panningView.frame.origin.x + panningView.frame.size.width) < ([self rightMenuWidth] / 2.0f))
                 {
@@ -1016,7 +1093,7 @@ static NSMutableArray *allInstances;
         }
         //----
         
-        if (self.menuState == AMSlidePanningStateLeft)
+        if (self.menuState == AMSlideMenuLeftOpened)
         {
             if (abs(translation.x) > kPanMinTranslationX && translation.x < 0)
             {
@@ -1029,7 +1106,7 @@ static NSMutableArray *allInstances;
                 [self configure3DTransformForMenu:AMSlideMenuLeft panningView:panningView];
             }
         }
-        else if (self.menuState == AMSlidePanningStateRight)
+        else if (self.menuState == AMSlideMenuRightOpened)
         {
             if (abs(translation.x) > kPanMinTranslationX && translation.x > 0)
             {
