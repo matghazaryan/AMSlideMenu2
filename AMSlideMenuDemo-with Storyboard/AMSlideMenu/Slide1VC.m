@@ -10,7 +10,9 @@
 #import "UIViewController+AMSlideMenu.h"
 #import "UIColor+CreateMethods.h"
 
-@interface Slide1VC ()
+@interface Slide1VC () <UITableViewDataSource, UIAccelerometerDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -20,7 +22,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -29,30 +30,39 @@
     
     // Setting navigation's bar tint color
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHex:@"#365491" alpha:1];
-    
-    [self fixStatusBar];
 }
 
-- (void)fixStatusBar
+#pragma mark - TableView Deletage and Datasouce methods
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
-        // The device is an iPhone or iPod touch.
-        
-        // Making view with same color that navigation bar
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 20)];
-        view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        view.backgroundColor = [UIColor colorWithHex:@"#365491" alpha:1];
-        
-        // Replace status bar view with created view and do magic :)
-        [[self mainSlideMenu] fixStatusBarWithView:view];
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    cell.textLabel.text = @"Test swipe to delete functionality";
+    
+    return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+
     }
 }
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [[self mainSlideMenu] unfixStatusBarView];
-}
-
 
 @end

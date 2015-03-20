@@ -20,11 +20,6 @@
 		3E9C29A21869CAD700E7F5E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29A11869CAD700E7F5E5 /* AppDelegate.m */; };
 		3E9C29A51869CAD700E7F5E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C29A31869CAD700E7F5E5 /* Main.storyboard */; };
 		3E9C29AA1869CAD700E7F5E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C29A91869CAD700E7F5E5 /* Images.xcassets */; };
-		3E9C29B11869CAD700E7F5E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29B01869CAD700E7F5E5 /* XCTest.framework */; };
-		3E9C29B21869CAD700E7F5E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29911869CAD700E7F5E5 /* Foundation.framework */; };
-		3E9C29B31869CAD700E7F5E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9C29951869CAD700E7F5E5 /* UIKit.framework */; };
-		3E9C29BB1869CAD700E7F5E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E9C29B91869CAD700E7F5E5 /* InfoPlist.strings */; };
-		3E9C29BD1869CAD700E7F5E5 /* AMSlideMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29BC1869CAD700E7F5E5 /* AMSlideMenuTests.m */; };
 		3E9C29DB1869CE0E00E7F5E5 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29DA1869CE0E00E7F5E5 /* MainVC.m */; };
 		3E9C29E01869CE4300E7F5E5 /* LeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29DF1869CE4300E7F5E5 /* LeftMenuVC.m */; };
 		3E9C29E61869CE8200E7F5E5 /* RightMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9C29E51869CE8200E7F5E5 /* RightMenuVC.m */; };
@@ -41,16 +36,6 @@
 		756D31DE18B2A069008E846B /* AMSlideMenuRightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D618B2A069008E846B /* AMSlideMenuRightTableViewController.m */; };
 		756D31DF18B2A069008E846B /* UIViewController+AMSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 756D31D818B2A069008E846B /* UIViewController+AMSlideMenu.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3E9C29B41869CAD700E7F5E5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E9C29861869CAD700E7F5E5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E9C298D1869CAD700E7F5E5;
-			remoteInfo = AMSlideMenu;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3E59F229186F038400AEFD6F /* simpleMenuButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = simpleMenuButton.png; sourceTree = "<group>"; };
@@ -70,11 +55,7 @@
 		3E9C29A11869CAD700E7F5E5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E9C29A41869CAD700E7F5E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E9C29A91869CAD700E7F5E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3E9C29AF1869CAD700E7F5E5 /* AMSlideMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMSlideMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9C29B01869CAD700E7F5E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3E9C29B81869CAD700E7F5E5 /* AMSlideMenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AMSlideMenuTests-Info.plist"; sourceTree = "<group>"; };
-		3E9C29BA1869CAD700E7F5E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3E9C29BC1869CAD700E7F5E5 /* AMSlideMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuTests.m; sourceTree = "<group>"; };
 		3E9C29D91869CE0E00E7F5E5 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
 		3E9C29DA1869CE0E00E7F5E5 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 		3E9C29DE1869CE4300E7F5E5 /* LeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuVC.h; sourceTree = "<group>"; };
@@ -117,16 +98,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E9C29AC1869CAD700E7F5E5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E9C29B11869CAD700E7F5E5 /* XCTest.framework in Frameworks */,
-				3E9C29B31869CAD700E7F5E5 /* UIKit.framework in Frameworks */,
-				3E9C29B21869CAD700E7F5E5 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -134,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				3E9C29971869CAD700E7F5E5 /* AMSlideMenu */,
-				3E9C29B61869CAD700E7F5E5 /* AMSlideMenuTests */,
 				3E9C29901869CAD700E7F5E5 /* Frameworks */,
 				3E9C298F1869CAD700E7F5E5 /* Products */,
 			);
@@ -144,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				3E9C298E1869CAD700E7F5E5 /* AMSlideMenu.app */,
-				3E9C29AF1869CAD700E7F5E5 /* AMSlideMenuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,24 +157,6 @@
 				3E9C299A1869CAD700E7F5E5 /* InfoPlist.strings */,
 				3E9C299D1869CAD700E7F5E5 /* main.m */,
 				3E9C299F1869CAD700E7F5E5 /* AMSlideMenu-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3E9C29B61869CAD700E7F5E5 /* AMSlideMenuTests */ = {
-			isa = PBXGroup;
-			children = (
-				3E9C29BC1869CAD700E7F5E5 /* AMSlideMenuTests.m */,
-				3E9C29B71869CAD700E7F5E5 /* Supporting Files */,
-			);
-			path = AMSlideMenuTests;
-			sourceTree = "<group>";
-		};
-		3E9C29B71869CAD700E7F5E5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3E9C29B81869CAD700E7F5E5 /* AMSlideMenuTests-Info.plist */,
-				3E9C29B91869CAD700E7F5E5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -280,37 +231,14 @@
 			productReference = 3E9C298E1869CAD700E7F5E5 /* AMSlideMenu.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3E9C29AE1869CAD700E7F5E5 /* AMSlideMenuTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E9C29C31869CAD700E7F5E5 /* Build configuration list for PBXNativeTarget "AMSlideMenuTests" */;
-			buildPhases = (
-				3E9C29AB1869CAD700E7F5E5 /* Sources */,
-				3E9C29AC1869CAD700E7F5E5 /* Frameworks */,
-				3E9C29AD1869CAD700E7F5E5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3E9C29B51869CAD700E7F5E5 /* PBXTargetDependency */,
-			);
-			name = AMSlideMenuTests;
-			productName = AMSlideMenuTests;
-			productReference = 3E9C29AF1869CAD700E7F5E5 /* AMSlideMenuTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3E9C29861869CAD700E7F5E5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Artur Mkrtchyan";
-				TargetAttributes = {
-					3E9C29AE1869CAD700E7F5E5 = {
-						TestTargetID = 3E9C298D1869CAD700E7F5E5;
-					};
-				};
 			};
 			buildConfigurationList = 3E9C29891869CAD700E7F5E5 /* Build configuration list for PBXProject "AMSlideMenu" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -326,7 +254,6 @@
 			projectRoot = "";
 			targets = (
 				3E9C298D1869CAD700E7F5E5 /* AMSlideMenu */,
-				3E9C29AE1869CAD700E7F5E5 /* AMSlideMenuTests */,
 			);
 		};
 /* End PBXProject section */
@@ -346,14 +273,6 @@
 				3E59F22C186F038400AEFD6F /* simpleMenuButton@2x.png in Resources */,
 				3E9C299C1869CAD700E7F5E5 /* InfoPlist.strings in Resources */,
 				3E9C29A51869CAD700E7F5E5 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E9C29AD1869CAD700E7F5E5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E9C29BB1869CAD700E7F5E5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,23 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E9C29AB1869CAD700E7F5E5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E9C29BD1869CAD700E7F5E5 /* AMSlideMenuTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3E9C29B51869CAD700E7F5E5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3E9C298D1869CAD700E7F5E5 /* AMSlideMenu */;
-			targetProxy = 3E9C29B41869CAD700E7F5E5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3E9C299A1869CAD700E7F5E5 /* InfoPlist.strings */ = {
@@ -417,14 +320,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3E9C29B91869CAD700E7F5E5 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3E9C29BA1869CAD700E7F5E5 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -432,7 +327,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -471,7 +365,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -528,48 +421,6 @@
 			};
 			name = Release;
 		};
-		3E9C29C41869CAD700E7F5E5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AMSlideMenu.app/AMSlideMenu";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AMSlideMenu/AMSlideMenu-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "AMSlideMenuTests/AMSlideMenuTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3E9C29C51869CAD700E7F5E5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AMSlideMenu.app/AMSlideMenu";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AMSlideMenu/AMSlideMenu-Prefix.pch";
-				INFOPLIST_FILE = "AMSlideMenuTests/AMSlideMenuTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,15 +438,6 @@
 			buildConfigurations = (
 				3E9C29C11869CAD700E7F5E5 /* Debug */,
 				3E9C29C21869CAD700E7F5E5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3E9C29C31869CAD700E7F5E5 /* Build configuration list for PBXNativeTarget "AMSlideMenuTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E9C29C41869CAD700E7F5E5 /* Debug */,
-				3E9C29C51869CAD700E7F5E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
