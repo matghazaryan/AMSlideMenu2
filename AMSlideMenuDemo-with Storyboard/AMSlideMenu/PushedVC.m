@@ -33,7 +33,7 @@
     if (self.navigationController.viewControllers.count > 1)
     {
         // Disabling pan gesture for left menu
-        [self disableSlidePanGestureForLeftMenu];
+//        [self disableSlidePanGestureForLeftMenu];
     }
     
     AMSlideMenuMainViewController *mainVC = [AMSlideMenuMainViewController getInstanceForVC:self];

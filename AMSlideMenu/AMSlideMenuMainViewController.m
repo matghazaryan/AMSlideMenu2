@@ -189,12 +189,12 @@ static NSMutableArray *allInstances;
 
 - (CGFloat) openAnimationDuration
 {
-    return 0.35f;
+    return 0.25f;
 }
 
 - (CGFloat) closeAnimationDuration
 {
-    return 0.35f;
+    return 0.25f;
 }
 
 - (UIViewAnimationOptions) openAnimationCurve
@@ -341,6 +341,16 @@ static NSMutableArray *allInstances;
 {
     CGPoint velocity = [self.panGesture velocityInView:self.panGesture.view];
     BOOL isHorizontalGesture = fabs(velocity.y) < fabs(velocity.x);
+    
+    if (isHorizontalGesture) {
+        if (velocity.x > 0 && self.rightPanDisabled) {
+            return NO;
+        }
+        
+        if (velocity.x < 0 && self.leftPanDisabled) {
+            return NO;
+        }
+    }
     
     return isHorizontalGesture;
 }
