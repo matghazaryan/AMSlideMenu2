@@ -181,7 +181,7 @@ SCREENSHOTS
 
 <br>
 Works great with UITableView "Swipe to delete" funtionality<br>
-<img src="https://raw.githubusercontent.com/SocialObjects-Software/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/CellEditDemo.gif" width=320>
+<img src="https://raw.githubusercontent.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/CellEditDemo.gif" width=320>
 
 Ideas
 ===========
