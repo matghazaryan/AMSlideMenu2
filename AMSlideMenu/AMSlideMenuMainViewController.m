@@ -806,7 +806,7 @@ static NSMutableArray *allInstances;
             if (!UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
                 CGRect frame = self.currentActiveNVC.view.frame;
                 
-                if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad || UIDeviceOrientationIsPortrait(initialOrientation)) {
+                if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad || UIInterfaceOrientationIsPortrait(initialOrientation)) {
                     frame.origin.y = -20;
                 }
                 
@@ -1105,7 +1105,7 @@ static NSMutableArray *allInstances;
         
         if (self.menuState == AMSlideMenuLeftOpened)
         {
-            if (fabsf(translation.x) > kPanMinTranslationX && translation.x < 0)
+            if (fabs(translation.x) > kPanMinTranslationX && translation.x < 0)
             {
                 [self closeLeftMenu];
             }
@@ -1118,7 +1118,7 @@ static NSMutableArray *allInstances;
         }
         else if (self.menuState == AMSlideMenuRightOpened)
         {
-            if (fabsf(translation.x) > kPanMinTranslationX && translation.x > 0)
+            if (fabs(translation.x) > kPanMinTranslationX && translation.x > 0)
             {
                 [self closeRightMenu];
             }
@@ -1134,7 +1134,7 @@ static NSMutableArray *allInstances;
         {
             if (panningState == AMSlidePanningStateRight && self.leftMenu)
             {
-                if (fabsf(translation.x) > kPanMinTranslationX && translation.x > 0)
+                if (fabs(translation.x) > kPanMinTranslationX && translation.x > 0)
                 {
                     [self openLeftMenu];
                 }
@@ -1147,7 +1147,7 @@ static NSMutableArray *allInstances;
             }
             else if (panningState == AMSlidePanningStateLeft  && self.rightMenu)
             {
-                if (fabsf(translation.x) > kPanMinTranslationX && translation.x < 0)
+                if (fabs(translation.x) > kPanMinTranslationX && translation.x < 0)
                 {
                     [self openRightMenu];
                 }
@@ -1219,7 +1219,7 @@ static NSMutableArray *allInstances;
     {
         if (self.statusBarView)
         {
-            self.statusBarView.layer.opacity = 1 - fabsf(panningView.frame.origin.x) / [self rightMenuWidth];
+            self.statusBarView.layer.opacity = 1 - fabs(panningView.frame.origin.x) / [self rightMenuWidth];
         }
     }
     /********************************************* STATUS BAR FIX *******************************************************/
@@ -1233,7 +1233,7 @@ static NSMutableArray *allInstances;
     }
     else if(menu == AMSlideMenuRight)
     {
-        CGFloat alpha = [self maxDarknessWhileRightMenu] * (fabsf(panningView.frame.origin.x) / [self rightMenuWidth]);
+        CGFloat alpha = [self maxDarknessWhileRightMenu] * (fabs(panningView.frame.origin.x) / [self rightMenuWidth]);
         
         self.darknessView.alpha = alpha;
     }
