@@ -106,7 +106,7 @@
 #pragma mark - Lifecycle -
 /*----------------------------------------------------*/
 
-#pragma marl - Swizzled Methods
+#pragma mark - Swizzled Methods
 
 - (void)my_viewWillDisappear:(BOOL)animated
 {
