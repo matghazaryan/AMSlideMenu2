@@ -29,7 +29,7 @@ Works for both <b>iPhone</b>, <b>iPad</b> and <b>macCatalyst</b>.
 #### Podfile
 
 ```ruby
-pod "AMSlideMenu", "~> 2.0.0"
+pod "AMSlideMenu", "~> 2.0.1"
 ```
 
 

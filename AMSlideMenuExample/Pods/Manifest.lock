@@ -1,0 +1,16 @@
+PODS:
+  - AMSlideMenu (2.0.0)
+
+DEPENDENCIES:
+  - AMSlideMenu (from `../`)
+
+EXTERNAL SOURCES:
+  AMSlideMenu:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AMSlideMenu: f691cfee1596c24258f2f96f57564fa5b5aa69a3
+
+PODFILE CHECKSUM: c1e7c5ded39e84d083dd8f35a8d14dce1343f062
+
+COCOAPODS: 1.9.1

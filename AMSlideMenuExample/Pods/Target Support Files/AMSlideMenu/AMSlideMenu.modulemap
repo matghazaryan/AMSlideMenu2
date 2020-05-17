@@ -1,0 +1,6 @@
+framework module AMSlideMenu {
+  umbrella header "AMSlideMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}
