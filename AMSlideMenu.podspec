@@ -1,27 +1,24 @@
 Pod::Spec.new do |s|
-  s.name         = "AMSlideMenu"
-  s.version      = "1.5.4"
-  s.summary      = "Ease slide menu, with high customization for ios"
-  s.platform     = :ios, '6.0'
-  s.source       = { :git => "https://github.com/arturdev/AMSlideMenu.git", :tag => "1.5.4" }
-  s.description  = <<-DESC
-                     This is a simple library to create sliding menus that can be used in storyboards and support static cells.
+  s.name          = "AMSlideMenu"
+  s.version       = "2.0.0"
+  s.swift_version = '5.1'
+  s.summary       = "Easy slide menu with high customization for ios"
+  s.platform      = :ios, '10.0'
+  s.source        = { :git => "https://github.com/arturdev/AMSlideMenu.git", :tag => "2.0.0" }
+  s.social_media_url = 'https://www.linkedin.com/in/arturdev/'
+  s.description   = <<-DESC
+                     This is a simple library to create sliding menus that can be used in storyboards.
 
 With this library you can create 3 types of sliding menus: 
 1. Slide menu with right menu only. 
 2. Slide menu with left menu only. 
 3. Slide menu with both left and right menus. 
 
-This repo contains project that demonstrate usage of AMSlideMenu .
-This project created in Xcode 5 , so this library is fully compatible with iOS 7.
-Works for both iPhone and iPad.
+This repo contains project that demonstrate a usage of AMSlideMenu.
+Works for both iPhone and iPad and macCatalyst.
                     DESC
   s.homepage     = "https://github.com/arturdev/AMSlideMenu"
   s.license      = 'MIT'
   s.author       = { "Artur Mkrtchyan" => "mkrtarturdev@gmail.com" }
-  s.source_files = 'AMSlideMenu/*'
-  s.requires_arc = true
-  s.prefix_header_contents = '#ifndef SYSTEM_VERSION_LESS_THAN
-#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-#endif'
+  s.source_files = 'AMSlideMenu/*.{swift}'
 end
