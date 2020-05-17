@@ -1,4 +1,8 @@
-AMSlideMenu  
+<h1><b>ATTENTION</b>‼️<br></h1>
+Starting from v2.0.0 all the APIs are changes. You can find the old version in the AMSlideMenu_ObjC branch.
+
+
+AMSlideMenu2  
 ===========
 
 Made with ❤️ by <b> arturdev </b>.
