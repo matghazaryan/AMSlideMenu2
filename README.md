@@ -32,7 +32,12 @@ Works for both <b>iPhone</b>, <b>iPad</b> and <b>macCatalyst</b>.
 pod "AMSlideMenu", "~> 2.0.1"
 ```
 
+### Swift Package Manager
+You can also use Swift Package Manager to add AMSlideMenu as a dependency to your project. In order to do so, use the following URL:
 
+```bash
+https://github.com/arturdev/AMSlideMenu.git
+```
 
 USAGE
 ======================
