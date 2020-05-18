@@ -32,9 +32,9 @@ fileprivate struct AssociationKeys {
 
 public extension UIViewController {
     
-    weak var slideMenuMainVC: AMSlideMenuMainVC? {
+    weak var slideMenuMainVC: AMSlideMenuMainViewController? {
         get {
-            let vc = objc_getAssociatedObject(self, &AssociationKeys.slideMenuMainVCKey) as? AMSlideMenuMainVC
+            let vc = objc_getAssociatedObject(self, &AssociationKeys.slideMenuMainVCKey) as? AMSlideMenuMainViewController
             if vc == nil && parent != nil {
                 return parent?.slideMenuMainVC
             }
@@ -46,22 +46,22 @@ public extension UIViewController {
     }
 
     @objc func showLeftMenu(animated: Bool = true, completion handler: (()->Void)? = nil) {
-        guard !(self is AMSlideMenuMainVC) else { return }
+        guard !(self is AMSlideMenuMainViewController) else { return }
         slideMenuMainVC?.showLeftMenu(animated: animated, completion: handler)
     }
 
     @objc func hideLeftMenu(animated: Bool = true, completion handler: (()->Void)? = nil) {
-        guard !(self is AMSlideMenuMainVC) else { return }
+        guard !(self is AMSlideMenuMainViewController) else { return }
         slideMenuMainVC?.hideLeftMenu(animated: animated, completion: handler)
     }
 
     @objc func showRightMenu(animated: Bool = true, completion handler: (()->Void)? = nil) {
-        guard !(self is AMSlideMenuMainVC) else { return }
+        guard !(self is AMSlideMenuMainViewController) else { return }
         slideMenuMainVC?.showRightMenu(animated: animated, completion: handler)
     }
 
     @objc func hideRightMenu(animated: Bool = true, completion handler: (()->Void)? = nil) {
-        guard !(self is AMSlideMenuMainVC) else { return }
+        guard !(self is AMSlideMenuMainViewController) else { return }
         slideMenuMainVC?.hideRightMenu(animated: animated, completion: handler)
     }
 }

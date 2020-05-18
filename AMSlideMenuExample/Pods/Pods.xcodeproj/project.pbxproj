@@ -26,7 +26,7 @@
 		C61773FB772D4A5C9FB55E0D11C332B3 /* AMSlidingAnimatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A83E7D25CE92960BEFF66DE53D91F9 /* AMSlidingAnimatorProtocol.swift */; };
 		C86F5509096FF8896A21A869012B3552 /* AMLeftMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E0E75B6A76664F721C3186ADFE26952 /* AMLeftMenuSegue.swift */; };
 		DD3DE4D3E316B984905C149CF989733C /* AMSlidingAnimatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05484C68EB18462BADDFCA72B4FDABC1 /* AMSlidingAnimatorFactory.swift */; };
-		E42B6EEB958F520D5F3CBEACA4564B22 /* AMSlideMenuMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF103C6D98916C93C086036DCDA842E /* AMSlideMenuMainVC.swift */; };
+		E42B6EEB958F520D5F3CBEACA4564B22 /* AMSlideMenuMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF103C6D98916C93C086036DCDA842E /* AMSlideMenuMainViewController.swift */; };
 		EFB2DCD7A7848D2954594A618139F011 /* AMRightMenuSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFDAA90EEE8F248CF6C7EC5099CE33F /* AMRightMenuSegue.swift */; };
 		F0371971FD2F237C1268633F2E895D10 /* AMContentSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601790390CC124841D09A0F8ADE29929 /* AMContentSegue.swift */; };
 		F50A233660BFEDDD26721A2954A839A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -58,7 +58,7 @@
 		42D5056E97517BBA28842632CD6CB88D /* AMSlidingContentShadowAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingContentShadowAnimator.swift; sourceTree = "<group>"; };
 		49799CFCB7A2429F1CAD507CAB1CD782 /* AMSlidingStandardAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingStandardAnimator.swift; sourceTree = "<group>"; };
 		4E1BC875701E5360C5127F7A72398F6E /* AMSlidingContentAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingContentAnimator.swift; sourceTree = "<group>"; };
-		5152048B5757B37A08870C2010DCBB4F /* AMSlideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AMSlideMenu.framework; path = AMSlideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5152048B5757B37A08870C2010DCBB4F /* AMSlideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AMSlideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5587AB8FEBBF41818F804E5A11278C8D /* AMSlideMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMSlideMenu.debug.xcconfig; sourceTree = "<group>"; };
 		601790390CC124841D09A0F8ADE29929 /* AMContentSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMContentSegue.swift; sourceTree = "<group>"; };
 		63A7EBA81C3157B4FB9EF21DC97B1CD0 /* AMSlidingBlurAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingBlurAnimator.swift; sourceTree = "<group>"; };
@@ -68,22 +68,22 @@
 		78A83E7D25CE92960BEFF66DE53D91F9 /* AMSlidingAnimatorProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingAnimatorProtocol.swift; sourceTree = "<group>"; };
 		7FFDAA90EEE8F248CF6C7EC5099CE33F /* AMRightMenuSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMRightMenuSegue.swift; sourceTree = "<group>"; };
 		87217D95433BE88626197A5C965CCE97 /* AMSlidingGroupAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingGroupAnimator.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FC2A5199A42CC5BD8D653BC6A6C77E3 /* UIViewController+AMExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+AMExtension.swift"; sourceTree = "<group>"; };
 		AE9CA0D59B89AAFFDEDAB2EF9602B606 /* AMSlideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AMSlideMenu-Info.plist"; sourceTree = "<group>"; };
 		B9D023A1B1973E4E6D48FD17492E3160 /* AMSlideMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AMSlideMenu.release.xcconfig; sourceTree = "<group>"; };
 		CB69B06C89C383857620E72CA51902B9 /* Pods-AMSlideMenuExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMSlideMenuExample-Info.plist"; sourceTree = "<group>"; };
-		CED7F795B7304FBBCACE3C7B1AE03D5E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		CFB42F902000825AE9F242E5AEC892FD /* AMSlideMenu.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AMSlideMenu.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CED7F795B7304FBBCACE3C7B1AE03D5E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CFB42F902000825AE9F242E5AEC892FD /* AMSlideMenu.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AMSlideMenu.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D6109D3DCC621A5E9D69281236F55B90 /* Pods-AMSlideMenuExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AMSlideMenuExample-umbrella.h"; sourceTree = "<group>"; };
 		DB2EC49A3CD1532E27676A083FA2ACB8 /* Pods-AMSlideMenuExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AMSlideMenuExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		DB5D7796D8D3F0D7153974B688EEA97E /* CAMediaTimingFunction+AMExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "CAMediaTimingFunction+AMExtension.swift"; sourceTree = "<group>"; };
-		DC05D8B1B1B3D0CBB307C22F884E68F1 /* Pods_AMSlideMenuExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AMSlideMenuExample.framework; path = "Pods-AMSlideMenuExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC05D8B1B1B3D0CBB307C22F884E68F1 /* Pods_AMSlideMenuExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMSlideMenuExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C09436C1F8B8C2B9A5D7974ADCFB35 /* Pods-AMSlideMenuExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AMSlideMenuExample-frameworks.sh"; sourceTree = "<group>"; };
 		E833DD77F3F9AA27E8A27DBC818449D4 /* AMSlidingDimmedBackgroundAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AMSlidingDimmedBackgroundAnimator.swift; sourceTree = "<group>"; };
 		E8DF1E4AD11699D7C637E501028902C7 /* AMSlideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AMSlideMenu-dummy.m"; sourceTree = "<group>"; };
-		F725DEB6F4DF15AEDC3C686DBDF4E9E0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		FBF103C6D98916C93C086036DCDA842E /* AMSlideMenuMainVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AMSlideMenuMainVC.swift; path = AMSlideMenu/AMSlideMenuMainVC.swift; sourceTree = "<group>"; };
+		F725DEB6F4DF15AEDC3C686DBDF4E9E0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FBF103C6D98916C93C086036DCDA842E /* AMSlideMenuMainViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AMSlideMenuMainViewController.swift; path = AMSlideMenu/AMSlideMenuMainViewController.swift; sourceTree = "<group>"; };
 		FEFA708E371E28B59832160F872B9775 /* AMSlideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AMSlideMenu.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +178,6 @@
 				662E0F1F32B6FA9F9ED888FF088044F4 /* AMSlidingShadowAnimator.swift */,
 				49799CFCB7A2429F1CAD507CAB1CD782 /* AMSlidingStandardAnimator.swift */,
 			);
-			name = Animators;
 			path = Animators;
 			sourceTree = "<group>";
 		};
@@ -253,7 +252,7 @@
 		E4239F77D7C13B44DF9C4E435B0E6A9B /* AMSlideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				FBF103C6D98916C93C086036DCDA842E /* AMSlideMenuMainVC.swift */,
+				FBF103C6D98916C93C086036DCDA842E /* AMSlideMenuMainViewController.swift */,
 				BD40D6B560D02F48368134B044592A55 /* Animation */,
 				EC8D24063B1AF71A8EE2EBDAF65ECAE2 /* CustomVisualEffectView */,
 				C0A16B1BCEF7663FE2EBD783FE34584C /* Extensions */,
@@ -387,7 +386,7 @@
 				C86F5509096FF8896A21A869012B3552 /* AMLeftMenuSegue.swift in Sources */,
 				EFB2DCD7A7848D2954594A618139F011 /* AMRightMenuSegue.swift in Sources */,
 				7FC2B0BC1DF02B131C94959E289AF644 /* AMSlideMenu-dummy.m in Sources */,
-				E42B6EEB958F520D5F3CBEACA4564B22 /* AMSlideMenuMainVC.swift in Sources */,
+				E42B6EEB958F520D5F3CBEACA4564B22 /* AMSlideMenuMainViewController.swift in Sources */,
 				55790EB4A3D85BF3EB78419E61700454 /* AMSlidingAnimationOptions.swift in Sources */,
 				DD3DE4D3E316B984905C149CF989733C /* AMSlidingAnimatorFactory.swift in Sources */,
 				C61773FB772D4A5C9FB55E0D11C332B3 /* AMSlidingAnimatorProtocol.swift in Sources */,

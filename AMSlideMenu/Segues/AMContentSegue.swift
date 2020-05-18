@@ -28,8 +28,8 @@ import UIKit
 
 open class AMContentSegue: UIStoryboardSegue {
     override open func perform() {
-        var mainVC:AMSlideMenuMainVC?
-        if let sourceVC = self.source as? AMSlideMenuMainVC {
+        var mainVC:AMSlideMenuMainViewController?
+        if let sourceVC = self.source as? AMSlideMenuMainViewController {
             mainVC = sourceVC
         } else if let sourceVC = self.source.slideMenuMainVC {
             mainVC = sourceVC

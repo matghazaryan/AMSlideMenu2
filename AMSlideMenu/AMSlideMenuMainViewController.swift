@@ -1,6 +1,6 @@
 
 //
-//  AMSlideMenuMainVC.swift
+//  AMSlideMenuMainViewController.swift
 //  AMSlideMenu
 //
 // The MIT License (MIT)
@@ -77,7 +77,7 @@ public extension AMSlideMenuDelegate {
 }
 
 @IBDesignable
-open class AMSlideMenuMainVC: UIViewController {
+open class AMSlideMenuMainViewController: UIViewController {
 
     public private(set) var leftMenuVC: UIViewController?
 	public private(set) var rightMenuVC: UIViewController?
@@ -139,7 +139,7 @@ open class AMSlideMenuMainVC: UIViewController {
         view.backgroundColor = .clear
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.isUserInteractionEnabled = false
-		view.layer.zPosition = CGFloat.greatestFiniteMagnitude - 1
+		view.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude) - 1
 		view.tag = 1000
         return view
     }()
@@ -148,11 +148,11 @@ open class AMSlideMenuMainVC: UIViewController {
         super.viewDidLoad()
         setupContent()
 		NotificationCenter.default.addObserver(self,
-											   selector: #selector(AMSlideMenuMainVC.handleShowLeftMenuNote),
+											   selector: #selector(AMSlideMenuMainViewController.handleShowLeftMenuNote),
 											   name: .showLeftMenu,
 											   object: nil)
 		NotificationCenter.default.addObserver(self,
-											   selector: #selector(AMSlideMenuMainVC.handleShowRightMenuNote),
+											   selector: #selector(AMSlideMenuMainViewController.handleShowRightMenuNote),
 											   name: .showRightMenu,
 											   object: nil)
 
@@ -487,7 +487,7 @@ open class AMSlideMenuMainVC: UIViewController {
     }
 }
 
-extension AMSlideMenuMainVC: UIGestureRecognizerDelegate {
+extension AMSlideMenuMainViewController: UIGestureRecognizerDelegate {
     open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == leftMenuPanGestureRecognizer || gestureRecognizer == rightMenuPanGestureRecognizer || gestureRecognizer == contentPanGestureRecognizer {
             if let pan = gestureRecognizer as? UIPanGestureRecognizer {
@@ -558,7 +558,7 @@ extension AMSlideMenuMainVC: UIGestureRecognizerDelegate {
     }
 }
 
-extension AMSlideMenuMainVC {
+extension AMSlideMenuMainViewController {
     public enum MenuState {
         case closed
         case leftOpened

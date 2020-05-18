@@ -28,7 +28,7 @@ import UIKit
 
 open class AMLeftMenuSegue: UIStoryboardSegue {
     override open func perform() {
-        guard let sourceVC = self.source as? AMSlideMenuMainVC else { return }
+        guard let sourceVC = self.source as? AMSlideMenuMainViewController else { return }
 
         destination.slideMenuMainVC = sourceVC
 		destination.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
