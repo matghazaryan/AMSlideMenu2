@@ -1,5 +1,5 @@
 PODS:
-  - AMSlideMenu (2.0.0)
+  - AMSlideMenu (2.0.2)
 
 DEPENDENCIES:
   - AMSlideMenu (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AMSlideMenu: f691cfee1596c24258f2f96f57564fa5b5aa69a3
+  AMSlideMenu: 50139e20a2c41fd7787ed96cc5f560ffde469fef
 
 PODFILE CHECKSUM: c1e7c5ded39e84d083dd8f35a8d14dce1343f062
 

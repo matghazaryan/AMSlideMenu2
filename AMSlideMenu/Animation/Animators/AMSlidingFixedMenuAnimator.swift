@@ -43,9 +43,12 @@ open class AMSlidingFixedMenuAnimator: AMSlidingAnimatorProtocol {
 		leftMenuView.frame = frame
 		completion?()
 		if prg == 0 {
-			leftMenuView.isHidden = true
 			frame.origin.x = -frame.width
 			leftMenuView.frame = frame
+
+			DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+				leftMenuView.isHidden = true
+			}
 		}
     }
 
@@ -62,9 +65,12 @@ open class AMSlidingFixedMenuAnimator: AMSlidingAnimatorProtocol {
 		rightMenuView.frame = frame
 		completion?()
 		if prg == 0 {
-			rightMenuView.isHidden = true
 			frame.origin.x = contentFrame.width
 			rightMenuView.frame = frame
+
+			DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+				rightMenuView.isHidden = true
+			}
 		}
 	}
 }

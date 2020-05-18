@@ -89,13 +89,13 @@ open class AMSlideMenuMainViewController: UIViewController {
 
 	private var menuWidthDefaultMultiplier: CGFloat {
 		#if targetEnvironment(macCatalyst)
-		return 0.2
+		return 0.201
 		#else
-		return 0.8
+		return 0.801
 		#endif
 	}
-	open var leftMenuWidth: CGFloat = 0
-	open var rightMenuWidth: CGFloat = 0
+	@IBInspectable open var leftMenuWidth: CGFloat = 0
+	@IBInspectable open var rightMenuWidth: CGFloat = 0
 
     open var animationDuration = TimeInterval(0.25)
 	open var animationOptions: AMSlidingAnimationOptions = [.slidingMenu, .dimmedBackground, .menuShadow, .blurBackground]
@@ -139,7 +139,7 @@ open class AMSlideMenuMainViewController: UIViewController {
         view.backgroundColor = .clear
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.isUserInteractionEnabled = false
-		view.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude) - 1
+		view.layer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
 		view.tag = 1000
         return view
     }()
@@ -202,17 +202,13 @@ open class AMSlideMenuMainViewController: UIViewController {
 		let shouldUpdateRightMenuWidth = rightMenuWidth == view.bounds.width * menuWidthDefaultMultiplier
 		super.viewWillTransition(to: size, with: coordinator)
 
-		coordinator.animate(alongsideTransition: { (_) in
+		let updateBlock = { (_: Any) in
 			shouldUpdateLeftMenuWidth ? (self.leftMenuWidth = (UIWindow.keyWindow?.width ?? 0) * self.menuWidthDefaultMultiplier) : nil
 			shouldUpdateRightMenuWidth ? (self.rightMenuWidth = (UIWindow.keyWindow?.width ?? 0) * self.menuWidthDefaultMultiplier) : nil
 			self.updateLeftMenuFrame()
 			self.updateRightMenuFrame()
-		}) { (_) in
-			shouldUpdateLeftMenuWidth ? (self.leftMenuWidth = size.width * self.menuWidthDefaultMultiplier) : nil
-			shouldUpdateRightMenuWidth ? (self.rightMenuWidth = size.width * self.menuWidthDefaultMultiplier) : nil
-			self.updateLeftMenuFrame()
-			self.updateRightMenuFrame()
 		}
+		coordinator.animate(alongsideTransition: updateBlock, completion: updateBlock)
 	}
 
     @objc open override func showLeftMenu(animated: Bool, completion handler: (()->Void)? = nil) {
@@ -502,7 +498,7 @@ extension AMSlideMenuMainViewController: UIGestureRecognizerDelegate {
                     return true
                 }
 
-				let point = pan.location(in: pan.view)
+				let point = pan.location(in: contentView)
 
                 if velocity.x > 0 {
 					if let rightMenuFrame = rightMenuVC?.view.layer.presentation()?.frame, rightMenuFrame.origin.x < contentView.bounds.width {
