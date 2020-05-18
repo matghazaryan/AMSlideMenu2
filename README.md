@@ -1,5 +1,5 @@
 <h1><b>ATTENTION</b>‼️<br></h1>
-Starting from v2.0.0 all the APIs are changes. You can find the old version in the AMSlideMenu_ObjC branch.
+Starting from v2.0.0 all the APIs are changed. You can find the old version in the AMSlideMenu_ObjC branch.
 
 
 AMSlideMenu2  
