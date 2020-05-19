@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "AMSlideMenu"
-  s.version       = "2.0.3"
+  s.version       = "2.0.4"
   s.swift_version = '5.1'
   s.summary       = "Easy slide menu with high customization for ios"
   s.platform      = :ios, '10.0'
