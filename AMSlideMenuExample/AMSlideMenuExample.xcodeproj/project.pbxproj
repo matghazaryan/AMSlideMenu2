@@ -13,6 +13,8 @@
 		7520B3302471BAF50096B26A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7520B32E2471BAF50096B26A /* Main.storyboard */; };
 		7520B3322471BAF70096B26A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7520B3312471BAF70096B26A /* Assets.xcassets */; };
 		7520B3352471BAF70096B26A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7520B3332471BAF70096B26A /* LaunchScreen.storyboard */; };
+		757DBE0F2474746A00F5D2B2 /* MainContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757DBE0E2474746A00F5D2B2 /* MainContainerViewController.swift */; };
+		757DBE112474750800F5D2B2 /* MenuChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757DBE102474750800F5D2B2 /* MenuChooserViewController.swift */; };
 		E7F7F5840B75C4231B51D2D5 /* Pods_AMSlideMenuExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD0DC6D742A7715425986D2 /* Pods_AMSlideMenuExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		7520B3312471BAF70096B26A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7520B3342471BAF70096B26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7520B3362471BAF70096B26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757DBE0E2474746A00F5D2B2 /* MainContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainerViewController.swift; sourceTree = "<group>"; };
+		757DBE102474750800F5D2B2 /* MenuChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuChooserViewController.swift; sourceTree = "<group>"; };
 		86E97BFC3B34AA8F0C4AC93B /* Pods-AMSlideMenuExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMSlideMenuExample.release.xcconfig"; path = "Target Support Files/Pods-AMSlideMenuExample/Pods-AMSlideMenuExample.release.xcconfig"; sourceTree = "<group>"; };
 		CAD0DC6D742A7715425986D2 /* Pods_AMSlideMenuExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMSlideMenuExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -87,6 +91,8 @@
 				7520B3312471BAF70096B26A /* Assets.xcassets */,
 				7520B3332471BAF70096B26A /* LaunchScreen.storyboard */,
 				7520B3362471BAF70096B26A /* Info.plist */,
+				757DBE0E2474746A00F5D2B2 /* MainContainerViewController.swift */,
+				757DBE102474750800F5D2B2 /* MenuChooserViewController.swift */,
 			);
 			path = AMSlideMenuExample;
 			sourceTree = "<group>";
@@ -207,6 +213,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7520B32D2471BAF50096B26A /* ViewController.swift in Sources */,
+				757DBE0F2474746A00F5D2B2 /* MainContainerViewController.swift in Sources */,
+				757DBE112474750800F5D2B2 /* MenuChooserViewController.swift in Sources */,
 				7520B3292471BAF50096B26A /* AppDelegate.swift in Sources */,
 				7520B32B2471BAF50096B26A /* SceneDelegate.swift in Sources */,
 			);
