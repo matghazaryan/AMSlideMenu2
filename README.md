@@ -9,8 +9,7 @@ Made with ❤️ by <b> arturdev </b>.
 
 Supported iOS version: >= 10.0
 
-<img src="https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/demo.gif" width=320><br>
-This is a simple library to create sliding menus that rock!
+This is a simple library to create sliding menus!
 
 With this library you can create 3 types of sliding menus: <br>
 1. Slide menu with <b>right</b> menu only. <br>
@@ -41,7 +40,7 @@ https://github.com/arturdev/AMSlideMenu.git
 
 USAGE
 ======================
-Video tutorial coming soon!
+[![Video Tutorial](https://raw.github.com/arturdev/AMSlideMenu/master/AMSlideMenuDemo-with%20Storyboard/AMSlideMenu/youtube.png)](https://www.youtube.com/watch?v=0NUHbPiTDpo)
 
 
 
