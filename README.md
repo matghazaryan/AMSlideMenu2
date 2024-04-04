@@ -55,6 +55,11 @@ SCREENSHOTS
 
 Screenshots comming soon!
 
+## Author
+
+arturdev, mkrtarturdev@gmail.com
+matghazaryan, matevos14@gmail.com
+
 Ideas
 ===========
 If you have any cool idea you would like to see in this lib or you found a bug please feel free to open an issue :)
