@@ -5,7 +5,7 @@ Starting from v2.0.0 all the APIs are changed. You can find the old version in t
 AMSlideMenu2  
 ===========
 
-Made with ❤️ by <b> arturdev </b>.
+Made with ❤️ by <b> matghazaryan </b>.
 
 Supported iOS version: >= 10.0
 
