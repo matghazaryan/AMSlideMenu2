@@ -57,7 +57,6 @@ Screenshots comming soon!
 
 ## Author
 
-arturdev, mkrtarturdev@gmail.com
 matghazaryan, matevos14@gmail.com
 
 Ideas
