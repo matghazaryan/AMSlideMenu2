@@ -35,7 +35,7 @@ pod "AMSlideMenu", "~> 2.0.1"
 You can also use Swift Package Manager to add AMSlideMenu as a dependency to your project. In order to do so, use the following URL:
 
 ```bash
-https://github.com/arturdev/AMSlideMenu.git
+https://github.com/matghazaryan/AMSlideMenu.git
 ```
 
 USAGE
